@@ -3,81 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>James Huynh | AI/ML Engineer & CS Student</title>
+  <title>James Huynh — AI/ML Engineer & CS Student</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-200 antialiased selection:bg-indigo-500 selection:text-white min-h-screen flex flex-col justify-between">
-
-  <!-- Background Ambient Glow (Updated for Modern Ash-Blue Hue) -->
-  <div class="fixed inset-0 pointer-events-none -z-10 flex justify-center items-center overflow-hidden">
-    <!-- Blueish Ash Hue (Left Side) -->
-    <div class="w-[800px] h-[800px] bg-sky-900/15 rounded-full blur-[140px] absolute -left-40 top-1/4"></div>
-    
-    <!-- Deep Ash Hue (Right Side) -->
-    <div class="w-[700px] h-[700px] bg-slate-700/10 rounded-full blur-[120px] absolute -right-20 bottom-1/4"></div>
-  </div>
+<body class="bg-neutral-950 text-neutral-300 antialiased min-h-screen flex flex-col justify-between selection:bg-neutral-800 selection:text-white">
 
   <!-- Main Container -->
-  <main class="max-w-4xl mx-auto px-6 py-12 md:py-20 space-y-16">
+  <main class="max-w-2xl mx-auto px-6 py-16 md:py-24 space-y-12">
     
-    <!-- Hero / Profile Section -->
-    <header class="flex flex-col md:flex-row items-center md:items-start gap-8 border-b border-slate-800 pb-12">
-      <div class="relative group">
-        <div class="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-2xl blur opacity-50 group-hover:opacity-100 transition duration-500"></div>
+    <!-- Profile / Header Section -->
+    <header class="space-y-6">
+      <div class="flex items-start justify-between gap-6">
+        <div>
+          <h1 class="text-2xl font-bold tracking-tight text-neutral-100">James Huynh</h1>
+          <p class="text-neutral-400 text-sm mt-1">
+            CS & AI Student @ University of Central Oklahoma
+          </p>
+          <p class="text-neutral-500 text-xs mt-1">
+            Oklahoma City, OK &bull; He/Him
+          </p>
+        </div>
+
         <img 
           src="profile.jpg" 
           alt="James Huynh" 
-          class="relative w-36 h-36 md:w-44 md:h-44 object-cover rounded-2xl border-2 border-slate-800 shadow-2xl"
+          class="w-20 h-20 rounded-md object-cover border border-neutral-800 flex-shrink-0"
         />
       </div>
 
-      <div class="flex-1 text-center md:text-left space-y-4">
-        <div>
-          <div class="flex items-center justify-center md:justify-start gap-3 mb-1">
-            <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white">James Huynh</h1>
-            <span class="text-xs font-semibold px-2.5 py-1 bg-slate-800 text-slate-400 rounded-full border border-slate-700">He/Him</span>
-          </div>
-          <p class="text-indigo-400 font-medium text-lg">Junior CS & AI Student @ University of Central Oklahoma</p>
-          <p class="text-slate-400 text-sm flex items-center justify-center md:justify-start gap-1.5 mt-1">
-  <i class="fa-solid fa-location-dot text-slate-500 text-base"></i>
-  <span>Oklahoma City, Oklahoma</span>
-</p>
-        </div>
+      <p class="text-neutral-400 text-sm leading-relaxed">
+        Studying AI/ML Engineering to transform complex data into actionable business values, driving efficiency and profitability across data-driven operations.
+      </p>
 
-        <p class="text-slate-300 text-sm leading-relaxed max-w-xl">
-          Studying AI/ML Engineering to transform complex data into actionable business values, driving efficiency and profitability across data-driven operations.
-        </p>
-
-        <!-- Social / Action Buttons -->
-        <div class="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-2">
-          <a href="mailto:jameshuynh.dev@gmail.com" class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm rounded-lg transition duration-200 shadow-lg shadow-indigo-600/20">
-            <i class="fa-solid fa-envelope"></i> jameshuynh.dev@gmail.com
-          </a>
-          <a href="https://www.linkedin.com/in/james-huynh-ai/" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 hover:bg-slate-800 text-slate-300 font-medium text-sm rounded-lg border border-slate-800 hover:border-slate-700 transition duration-200">
-            <i class="fa-brands fa-linkedin"></i> LinkedIn (james-huynh-ai)
-          </a>
-          <a href="https://github.com/jameshuynh-dev" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 hover:bg-slate-800 text-slate-300 font-medium text-sm rounded-lg border border-slate-800 hover:border-slate-700 transition duration-200">
-            <i class="fa-brands fa-github"></i> GitHub
-          </a>
-        </div>
+      <!-- Social / Action Links -->
+      <div class="flex flex-wrap gap-2 text-xs">
+        <a href="mailto:jameshuynh.dev@gmail.com" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-800 rounded transition-colors">
+          <i class="fa-solid fa-envelope text-neutral-400"></i> jameshuynh.dev@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/james-huynh-ai/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-800 rounded transition-colors">
+          <i class="fa-brands fa-linkedin text-neutral-400"></i> LinkedIn
+        </a>
+        <a href="https://github.com/jameshuynh-dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-800 rounded transition-colors">
+          <i class="fa-brands fa-github text-neutral-400"></i> GitHub
+        </a>
       </div>
     </header>
 
+    <hr class="border-neutral-900" />
+
     <!-- About Section -->
-    <section class="space-y-4">
-      <h2 class="text-xl font-bold text-white flex items-center gap-2">
-        <i class="fa-solid fa-user-astronaut text-indigo-400"></i> About Me
-      </h2>
-      <div class="p-6 bg-slate-900/50 rounded-2xl border border-slate-800/80 backdrop-blur-sm space-y-3">
-        <p class="text-slate-300 text-sm leading-relaxed">
+    <section class="space-y-3">
+      <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-400">About</h2>
+      <div class="text-neutral-400 text-sm leading-relaxed space-y-3">
+        <p>
           I am currently a junior pursuing a Bachelor of Science in Computer Science - Artificial Intelligence at the University of Central Oklahoma (UCO). My goal is to gain a strong foundation in both theoretical and practical software engineering, specializing in AI/Machine Learning Engineering.
         </p>
-        <p class="text-slate-300 text-sm leading-relaxed">
+        <p>
           My focus is solving real-world problems using computer science principles and modern AI tools to build intelligent systems that convert raw data into strategic operations.
         </p>
       </div>
@@ -85,52 +71,49 @@
 
     <!-- Education Section -->
     <section class="space-y-4">
-      <h2 class="text-xl font-bold text-white flex items-center gap-2">
-        <i class="fa-solid fa-graduation-cap text-indigo-400"></i> Education
-      </h2>
-      <div class="grid gap-4">
+      <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-400">Education</h2>
+      <div class="space-y-4">
         
         <!-- Degree 1 -->
-        <div class="p-5 bg-slate-900/50 rounded-xl border border-slate-800/80 hover:border-slate-700 transition duration-200 flex flex-col md:flex-row md:items-center justify-between gap-2">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between text-sm gap-1">
           <div>
-            <h3 class="font-semibold text-white">University of Central Oklahoma</h3>
-            <p class="text-sm text-indigo-400">Bachelor of Science in Computer Science - Artificial Intelligence</p>
+            <h3 class="font-medium text-neutral-200">University of Central Oklahoma</h3>
+            <p class="text-neutral-400 text-xs">B.S. in Computer Science — Artificial Intelligence</p>
           </div>
-          <span class="text-xs font-mono text-slate-400 bg-slate-800 px-3 py-1 rounded-full w-fit">Jan 2026 – Dec 2027</span>
+          <span class="text-xs text-neutral-500 font-mono">2026 – 2027</span>
         </div>
 
         <!-- Degree 2 -->
-        <div class="p-5 bg-slate-900/50 rounded-xl border border-slate-800/80 hover:border-slate-700 transition duration-200 flex flex-col md:flex-row md:items-center justify-between gap-2">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between text-sm gap-1">
           <div>
-            <h3 class="font-semibold text-white">Oklahoma City Community College</h3>
-            <p class="text-sm text-slate-400">Associate of Science - AS, Computer Science</p>
+            <h3 class="font-medium text-neutral-200">Oklahoma City Community College</h3>
+            <p class="text-neutral-400 text-xs">A.S. in Computer Science</p>
           </div>
-          <span class="text-xs font-mono text-slate-400 bg-slate-800 px-3 py-1 rounded-full w-fit">Jan 2024 – Dec 2025</span>
+          <span class="text-xs text-neutral-500 font-mono">2024 – 2025</span>
         </div>
 
       </div>
     </section>
 
-    <!-- Core Skills / Focus Area -->
-    <section class="space-y-4">
-      <h2 class="text-xl font-bold text-white flex items-center gap-2">
-        <i class="fa-solid fa-brain text-indigo-400"></i> Technical Focus
-      </h2>
-      <div class="flex flex-wrap gap-2">
-        <span class="px-3 py-1.5 bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 text-xs font-medium rounded-lg">Artificial Intelligence</span>
-        <span class="px-3 py-1.5 bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 text-xs font-medium rounded-lg">Machine Learning Engineering</span>
-        <span class="px-3 py-1.5 bg-slate-800 text-slate-300 border border-slate-700 text-xs font-medium rounded-lg">Software Engineering</span>
-        <span class="px-3 py-1.5 bg-slate-800 text-slate-300 border border-slate-700 text-xs font-medium rounded-lg">Data Transformation</span>
-        <span class="px-3 py-1.5 bg-slate-800 text-slate-300 border border-slate-700 text-xs font-medium rounded-lg">Data-Driven Operations</span>
-        <span class="px-3 py-1.5 bg-slate-800 text-slate-300 border border-slate-700 text-xs font-medium rounded-lg">Python / Modern Tools</span>
+    <!-- Technical Focus Section -->
+    <section class="space-y-3">
+      <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-400">Focus Areas</h2>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="px-2 py-1 bg-neutral-900 text-neutral-300 border border-neutral-800 text-xs rounded">Artificial Intelligence</span>
+        <span class="px-2 py-1 bg-neutral-900 text-neutral-300 border border-neutral-800 text-xs rounded">Machine Learning Engineering</span>
+        <span class="px-2 py-1 bg-neutral-900 text-neutral-300 border border-neutral-800 text-xs rounded">Software Engineering</span>
+        <span class="px-2 py-1 bg-neutral-900 text-neutral-300 border border-neutral-800 text-xs rounded">Data Transformation</span>
+        <span class="px-2 py-1 bg-neutral-900 text-neutral-300 border border-neutral-800 text-xs rounded">Data-Driven Operations</span>
+        <span class="px-2 py-1 bg-neutral-900 text-neutral-300 border border-neutral-800 text-xs rounded">Python / Tooling</span>
       </div>
     </section>
 
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-slate-900 py-6 text-center text-xs text-slate-500">
-    <p>© 2026 James Huynh. Built with Tailwind CSS.</p>
+  <footer class="max-w-2xl mx-auto w-full px-6 py-8 border-t border-neutral-900 text-xs text-neutral-600 flex justify-between items-center">
+    <p>© 2026 James Huynh</p>
+    <p>Oklahoma City, OK</p>
   </footer>
 
 </body>
