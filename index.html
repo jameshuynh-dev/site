@@ -52,14 +52,9 @@
     .toolbar a:hover, .toolbar button:hover { background: #f0f0f0; }
 
     header.top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 24px;
+      text-align: center;
       margin-bottom: 20px;
     }
-
-    .head-text { text-align: center; flex: 1; }
 
     h1 {
       font-size: 28px;
@@ -80,15 +75,6 @@
       color: #333;
     }
     .contact a { color: #1a1a1a; text-decoration: underline; }
-
-    .pfp {
-      width: 76px;
-      height: 76px;
-      border-radius: 6px;
-      object-fit: cover;
-      border: 1px solid #ddd;
-      flex-shrink: 0;
-    }
 
     h2.section {
       font-size: 13px;
@@ -145,7 +131,6 @@
 
     @media (max-width: 640px) {
       .page { padding: 32px 20px; }
-      header.top { flex-direction: column-reverse; align-items: center; }
       .skills-row { flex-direction: column; gap: 0; }
       .skills-label { width: auto; }
     }
@@ -161,21 +146,18 @@
   <main class="page">
 
     <header class="top">
-      <div class="head-text">
-        <h1>James Huynh</h1>
-        <p class="tagline">
-          Aspiring AI/ML Engineer with interests in Data Science, Cybersecurity, and deploying
-          enterprise AI applications to optimize business operations and elevate customer experience.
-        </p>
-        <p class="contact">
-          Oklahoma City, OK &bull;
-          <a href="tel:+14055055160">405-505-5160</a> &bull;
-          <a href="mailto:jameshuynh.dev@gmail.com">jameshuynh.dev@gmail.com</a> &bull;
-          <a href="https://github.com/jameshuynh-dev" target="_blank" rel="noopener noreferrer">github.com/jameshuynh-dev</a> &bull;
-          <a href="https://www.linkedin.com/in/james-huynh-ai/" target="_blank" rel="noopener noreferrer">linkedin</a>
-        </p>
-      </div>
-      <img src="profile.jpg" alt="James Huynh" class="pfp" />
+      <h1>James Huynh</h1>
+      <p class="tagline">
+        Aspiring AI/ML Engineer with interests in Data Science, Cybersecurity, and deploying
+        enterprise AI applications to optimize business operations and elevate customer experience.
+      </p>
+      <p class="contact">
+        Oklahoma City, OK &bull;
+        <a href="tel:+14055055160">405-505-5160</a> &bull;
+        <a href="mailto:jameshuynh.dev@gmail.com">jameshuynh.dev@gmail.com</a> &bull;
+        <a href="https://github.com/jameshuynh-dev" target="_blank" rel="noopener noreferrer">github.com/jameshuynh-dev</a> &bull;
+        <a href="https://www.linkedin.com/in/james-huynh-ai/" target="_blank" rel="noopener noreferrer">linkedin</a>
+      </p>
     </header>
 
     <h2 class="section">Education</h2>
