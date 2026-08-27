@@ -1,160 +1,231 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>James Huynh — Aspiring AI/ML Engineer</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>James Huynh — Résumé</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-    body { font-family: 'Inter', sans-serif; }
+    @media print {
+      .no-print { display: none !important; }
+      body { padding: 0 !important; }
+      a { color: #111 !important; text-decoration: none !important; }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      color: #1a1a1a;
+      background: #f2f1ed;
+      margin: 0;
+      padding: 40px 16px;
+    }
+
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 56px 64px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+    }
+
+    .toolbar {
+      max-width: 760px;
+      margin: 0 auto 12px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      font-family: Georgia, serif;
+      font-size: 13px;
+    }
+    .toolbar a, .toolbar button {
+      font-family: inherit;
+      font-size: 13px;
+      color: #1a1a1a;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 6px 12px;
+      border-radius: 3px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .toolbar a:hover, .toolbar button:hover { background: #f0f0f0; }
+
+    header.top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    .head-text { text-align: center; flex: 1; }
+
+    h1 {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 0 0 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .tagline {
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0 0 10px;
+      color: #222;
+    }
+
+    .contact {
+      font-size: 13px;
+      color: #333;
+    }
+    .contact a { color: #1a1a1a; text-decoration: underline; }
+
+    .pfp {
+      width: 76px;
+      height: 76px;
+      border-radius: 6px;
+      object-fit: cover;
+      border: 1px solid #ddd;
+      flex-shrink: 0;
+    }
+
+    h2.section {
+      font-size: 13px;
+      font-variant: small-caps;
+      letter-spacing: 1.5px;
+      font-weight: bold;
+      border-bottom: 1.5px solid #1a1a1a;
+      padding-bottom: 4px;
+      margin: 28px 0 12px;
+    }
+
+    .entry { margin-bottom: 14px; }
+
+    .entry-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .entry-title { font-weight: bold; font-size: 14px; }
+    .entry-sub { font-style: italic; font-size: 13px; color: #333; }
+    .entry-date { font-size: 12.5px; color: #444; white-space: nowrap; }
+
+    .detail { font-size: 12.5px; line-height: 1.5; color: #222; margin: 4px 0 0; }
+    .detail b { font-weight: bold; }
+
+    .skills-row { display: flex; gap: 8px; font-size: 12.5px; line-height: 1.6; margin-bottom: 4px; }
+    .skills-label { font-weight: bold; width: 180px; flex-shrink: 0; }
+
+    ul.bullets {
+      margin: 8px 0 0;
+      padding-left: 18px;
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: #222;
+    }
+    ul.bullets li { margin-bottom: 6px; }
+
+    .proj-link { font-size: 12.5px; }
+    .proj-link a { color: #1a1a1a; }
+
+    .tags { margin: 6px 0; font-size: 11.5px; color: #444; }
+
+    footer.page-footer {
+      margin-top: 30px;
+      padding-top: 12px;
+      border-top: 1px solid #ddd;
+      font-size: 11px;
+      color: #888;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 32px 20px; }
+      header.top { flex-direction: column-reverse; align-items: center; }
+      .skills-row { flex-direction: column; gap: 0; }
+      .skills-label { width: auto; }
+    }
   </style>
 </head>
-<body class="bg-neutral-950 text-neutral-300 antialiased min-h-screen flex flex-col justify-between selection:bg-neutral-800 selection:text-white">
+<body>
 
-  <!-- Main Container -->
-  <main class="max-w-2xl mx-auto px-6 py-16 md:py-24 space-y-12">
-    
-    <!-- Profile / Header Section -->
-    <header class="space-y-6">
-      <div class="flex items-start justify-between gap-6">
-        <div>
-          <h1 class="text-2xl font-bold tracking-tight text-neutral-100">James Huynh</h1>
-          <p class="text-neutral-400 text-sm mt-1">
-            CS & AI Student @ University of Central Oklahoma
-          </p>
-          <p class="text-neutral-500 text-xs mt-1">
-            Oklahoma City, OK &bull; He/Him
-          </p>
-        </div>
+  <div class="toolbar no-print">
+    <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Download PDF</a>
+    <button onclick="window.print()">Print</button>
+  </div>
 
-        <img
-          src="profile.jpg"
-          alt="James Huynh"
-          class="w-20 h-20 rounded-md object-cover border border-neutral-800 flex-shrink-0"
-        />
+  <main class="page">
+
+    <header class="top">
+      <div class="head-text">
+        <h1>James Huynh</h1>
+        <p class="tagline">
+          Aspiring AI/ML Engineer with interests in Data Science, Cybersecurity, and deploying
+          enterprise AI applications to optimize business operations and elevate customer experience.
+        </p>
+        <p class="contact">
+          Oklahoma City, OK &bull;
+          <a href="tel:+14055055160">405-505-5160</a> &bull;
+          <a href="mailto:jameshuynh.dev@gmail.com">jameshuynh.dev@gmail.com</a> &bull;
+          <a href="https://github.com/jameshuynh-dev" target="_blank" rel="noopener noreferrer">github.com/jameshuynh-dev</a> &bull;
+          <a href="https://www.linkedin.com/in/james-huynh-ai/" target="_blank" rel="noopener noreferrer">linkedin</a>
+        </p>
       </div>
-
-      <p class="text-neutral-400 text-sm leading-relaxed">
-        Aspiring AI/ML Engineer with interests in Data Science, Cybersecurity, and deploying enterprise AI applications to optimize business operations and elevate customer experience.
-      </p>
-
-      <!-- Social / Action Links -->
-      <div class="flex flex-wrap gap-2 text-xs">
-        <a href="mailto:jameshuynh.dev@gmail.com" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-800 rounded transition-colors">
-          <i class="fa-solid fa-envelope text-neutral-400"></i> jameshuynh.dev@gmail.com
-        </a>
-        <a href="tel:+14055055160" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-800 rounded transition-colors">
-          <i class="fa-solid fa-phone text-neutral-400"></i> 405-505-5160
-        </a>
-        <a href="https://www.linkedin.com/in/james-huynh-ai/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-800 rounded transition-colors">
-          <i class="fa-brands fa-linkedin text-neutral-400"></i> LinkedIn
-        </a>
-        <a href="https://github.com/jameshuynh-dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-800 rounded transition-colors">
-          <i class="fa-brands fa-github text-neutral-400"></i> GitHub
-        </a>
-      </div>
+      <img src="profile.jpg" alt="James Huynh" class="pfp" />
     </header>
 
-    <hr class="border-neutral-900" />
+    <h2 class="section">Education</h2>
 
-    <!-- Education Section -->
-    <section class="space-y-4">
-      <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-400">Education</h2>
-      <div class="space-y-5">
-
-        <!-- Degree 1 -->
-        <div class="space-y-1.5">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between text-sm gap-1">
-            <div>
-              <h3 class="font-medium text-neutral-200">University of Central Oklahoma</h3>
-              <p class="text-neutral-400 text-xs">Bachelor of Science in Computer Science &bull; GPA: 3.66/4.0</p>
-            </div>
-            <span class="text-xs text-neutral-500 font-mono whitespace-nowrap">Current – Exp. Dec 2027</span>
-          </div>
-          <p class="text-neutral-500 text-xs leading-relaxed">
-            <span class="text-neutral-400">Relevant coursework:</span> Advanced Data Structures &amp; Algorithms, Discrete Structures, Object-Oriented Programming, Operating Systems, Computer Organization &amp; Architecture II, Cybersecurity, Software Engineering I.
-          </p>
-          <p class="text-neutral-500 text-xs leading-relaxed">
-            <span class="text-neutral-400">Anticipated coursework:</span> Artificial Intelligence, Deep Learning, Machine Learning, Robotics.
-          </p>
-        </div>
-
-        <!-- Degree 2 -->
-        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between text-sm gap-1">
-          <div>
-            <h3 class="font-medium text-neutral-200">Oklahoma City Community College</h3>
-            <p class="text-neutral-400 text-xs">Associate of Science in Computer Science</p>
-          </div>
-          <span class="text-xs text-neutral-500 font-mono whitespace-nowrap">Jan 2024 – Dec 2025 &bull; Completed</span>
-        </div>
-
+    <div class="entry">
+      <div class="entry-row">
+        <span class="entry-title">University of Central Oklahoma</span>
+        <span class="entry-date">Current &ndash; Expected Dec 2027</span>
       </div>
-    </section>
+      <div class="entry-sub">Bachelor of Science in Computer Science (GPA: 3.66/4.0)</div>
+      <p class="detail"><b>Relevant coursework:</b> Advanced Data Structures &amp; Algorithms, Discrete Structures, Object-Oriented Programming, Operating Systems, Computer Organization &amp; Architecture II, Cybersecurity, Software Engineering I.</p>
+      <p class="detail"><b>Anticipated coursework:</b> Artificial Intelligence, Deep Learning, Machine Learning, Robotics.</p>
+    </div>
 
-    <!-- Technical Skills Section -->
-    <section class="space-y-4">
-      <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-400">Technical Skills</h2>
-      <div class="space-y-3 text-sm">
-        <div class="flex flex-col sm:flex-row sm:gap-2">
-          <span class="text-neutral-200 font-medium text-xs sm:w-40 flex-shrink-0">Languages</span>
-          <span class="text-neutral-400 text-xs">C++, Python, Java, HTML, CSS, SQL, TypeScript</span>
-        </div>
-        <div class="flex flex-col sm:flex-row sm:gap-2">
-          <span class="text-neutral-200 font-medium text-xs sm:w-40 flex-shrink-0">Frameworks &amp; Libraries</span>
-          <span class="text-neutral-400 text-xs">Next.js 15, React, Tailwind CSS, Vercel AI SDK</span>
-        </div>
-        <div class="flex flex-col sm:flex-row sm:gap-2">
-          <span class="text-neutral-200 font-medium text-xs sm:w-40 flex-shrink-0">AI &amp; Machine Learning</span>
-          <span class="text-neutral-400 text-xs">Retrieval-Augmented Generation (RAG), OpenAI API (gpt-4o-mini), Vector Embeddings (text-embedding-3-small), Cosine Similarity, Prompt Engineering</span>
-        </div>
-        <div class="flex flex-col sm:flex-row sm:gap-2">
-          <span class="text-neutral-200 font-medium text-xs sm:w-40 flex-shrink-0">Tools &amp; Platforms</span>
-          <span class="text-neutral-400 text-xs">Git, GitHub, Linux, PostgreSQL, Vercel, Claude Code, Agentic AI Development</span>
-        </div>
+    <div class="entry">
+      <div class="entry-row">
+        <span class="entry-title">Oklahoma City Community College</span>
+        <span class="entry-date">Jan 2024 &ndash; Dec 2025 &bull; Completed</span>
       </div>
-    </section>
+      <div class="entry-sub">Associate of Science in Computer Science</div>
+    </div>
 
-    <!-- Technical Projects Section -->
-    <section class="space-y-4">
-      <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-400">Technical Projects</h2>
+    <h2 class="section">Technical Skills</h2>
 
-      <div class="border border-neutral-900 rounded-lg p-4 space-y-3">
-        <div>
-          <h3 class="font-medium text-neutral-200 text-sm">
-            Cosmo Mart
-            <span class="text-neutral-500 font-normal"> — Enterprise &amp; RAG-Focused AI Customer Service Implementation</span>
-          </h3>
-          <a href="https://cosmo-mart-alpha.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-xs text-neutral-400 hover:text-neutral-200 underline underline-offset-2">
-            cosmo-mart-alpha.vercel.app
-          </a>
-        </div>
+    <div class="skills-row"><span class="skills-label">Languages</span><span>C++, Python, Java, HTML, CSS, SQL, TypeScript</span></div>
+    <div class="skills-row"><span class="skills-label">Frameworks &amp; Libraries</span><span>Next.js 15, React, Tailwind CSS, Vercel AI SDK</span></div>
+    <div class="skills-row"><span class="skills-label">AI &amp; Machine Learning</span><span>Retrieval-Augmented Generation (RAG), OpenAI API (gpt-4o-mini), Vector Embeddings (text-embedding-3-small), Cosine Similarity, Prompt Engineering</span></div>
+    <div class="skills-row"><span class="skills-label">Tools &amp; Platforms</span><span>Git, GitHub, Linux, PostgreSQL, Vercel, Claude Code, Agentic AI Development</span></div>
 
-        <div class="flex flex-wrap gap-1.5">
-          <span class="px-2 py-1 bg-neutral-900 text-neutral-300 border border-neutral-800 text-xs rounded">Next.js 15</span>
-          <span class="px-2 py-1 bg-neutral-900 text-neutral-300 border border-neutral-800 text-xs rounded">TypeScript</span>
-          <span class="px-2 py-1 bg-neutral-900 text-neutral-300 border border-neutral-800 text-xs rounded">Tailwind CSS</span>
-          <span class="px-2 py-1 bg-neutral-900 text-neutral-300 border border-neutral-800 text-xs rounded">Vercel AI SDK</span>
-          <span class="px-2 py-1 bg-neutral-900 text-neutral-300 border border-neutral-800 text-xs rounded">OpenAI API</span>
-          <span class="px-2 py-1 bg-neutral-900 text-neutral-300 border border-neutral-800 text-xs rounded">In-Memory RAG Vector Engine</span>
-        </div>
+    <h2 class="section">Technical Projects</h2>
 
-        <ul class="text-neutral-400 text-xs leading-relaxed space-y-2 list-disc list-outside pl-4">
-          <li>Architected a full-stack e-commerce storefront featuring "Gleb," an AI customer service agent powered by an in-memory RAG (Retrieval-Augmented Generation) pipeline to ground the foundation model's responses in verified internal data, company policies, and product specifications to deliver accurate, policy-compliant customer responses.</li>
-          <li>Built a custom, lightweight vector search engine using OpenAI text-embedding-3-small and cosine similarity, choosing an in-memory design to maximize lookup efficiency and eliminate external database overhead for static datasets.</li>
-          <li>Engineered a high-contrast UI with Next.js 15 App Router and streamed real-time AI responses via Vercel AI SDK, deployed to Vercel with automated CI/CD for continuous, 24/7 online availability.</li>
-        </ul>
+    <div class="entry">
+      <div class="entry-row">
+        <span class="entry-title">Cosmo Mart</span>
+        <span class="entry-date proj-link"><a href="https://cosmo-mart-alpha.vercel.app/" target="_blank" rel="noopener noreferrer">cosmo-mart-alpha.vercel.app</a></span>
       </div>
-    </section>
+      <div class="entry-sub">Enterprise &amp; RAG-Focused AI Customer Service Implementation</div>
+      <p class="tags">Next.js 15, TypeScript, Tailwind CSS, Vercel AI SDK, OpenAI API, In-Memory RAG Vector Engine</p>
+      <ul class="bullets">
+        <li>Architected a full-stack e-commerce storefront featuring "Gleb," an AI customer service agent powered by an in-memory RAG (Retrieval-Augmented Generation) pipeline to ground the foundation model's responses in verified internal data, company policies, and product specifications to deliver accurate, policy-compliant customer responses.</li>
+        <li>Built a custom, lightweight vector search engine using OpenAI text-embedding-3-small and cosine similarity, choosing an in-memory design to maximize lookup efficiency and eliminate external database overhead for static datasets.</li>
+        <li>Engineered a high-contrast UI with Next.js 15 App Router and streamed real-time AI responses via Vercel AI SDK, deployed to Vercel with automated CI/CD for continuous, 24/7 online availability.</li>
+      </ul>
+    </div>
+
+    <footer class="page-footer">
+      jameshuynh-dev.github.io/site/ &bull; &copy; 2026 James Huynh
+    </footer>
 
   </main>
-
-  <!-- Footer -->
-  <footer class="max-w-2xl mx-auto w-full px-6 py-8 border-t border-neutral-900 text-xs text-neutral-600 flex justify-between items-center">
-    <p>© 2026 James Huynh</p>
-    <p>jameshuynh-dev.github.io/site/</p>
-  </footer>
 
 </body>
 </html>
