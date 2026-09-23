@@ -215,7 +215,6 @@ a:hover { color: var(--sage); }
   line-height: 1.1;
 }
 .note p { margin: 0; font-size: 17px; line-height: 1.5; color: var(--ink-soft); }
-.note .recs { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--rule); font-size: 16px; }
 
 /* ---------- stamps (socials) ---------- */
 
