@@ -19,209 +19,176 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dearhuynh.com" />
 
-  <style>
-    @media print {
-      .no-print { display: none !important; }
-      body { padding: 0 !important; }
-      a { color: #111 !important; text-decoration: none !important; }
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      font-family: Georgia, 'Times New Roman', Times, serif;
-      color: #1a1a1a;
-      background: #f2f1ed;
-      margin: 0;
-      padding: 40px 16px;
-    }
-
-    .page {
-      max-width: 760px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 56px 64px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
-    }
-
-    .toolbar {
-      max-width: 760px;
-      margin: 0 auto 12px;
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-      font-family: Georgia, serif;
-      font-size: 13px;
-    }
-    .toolbar a, .toolbar button {
-      font-family: inherit;
-      font-size: 13px;
-      color: #1a1a1a;
-      background: #fff;
-      border: 1px solid #ccc;
-      padding: 6px 12px;
-      border-radius: 3px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .toolbar a:hover, .toolbar button:hover { background: #f0f0f0; }
-
-    header.top {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 28px;
-      font-weight: bold;
-      margin: 0 0 8px;
-      letter-spacing: 0.5px;
-    }
-
-    .tagline {
-      font-size: 14px;
-      line-height: 1.5;
-      margin: 0 0 10px;
-      color: #222;
-    }
-
-    .contact {
-      font-size: 13px;
-      color: #333;
-    }
-    .contact a { color: #1a1a1a; text-decoration: underline; }
-
-    h2.section {
-      font-size: 13px;
-      font-variant: small-caps;
-      letter-spacing: 1.5px;
-      font-weight: bold;
-      border-bottom: 1.5px solid #1a1a1a;
-      padding-bottom: 4px;
-      margin: 28px 0 12px;
-    }
-
-    .entry { margin-bottom: 14px; }
-
-    .entry-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .entry-title { font-weight: bold; font-size: 14px; }
-    .entry-sub { font-style: italic; font-size: 13px; color: #333; }
-    .entry-date { font-size: 12.5px; color: #444; white-space: nowrap; }
-
-    .detail { font-size: 12.5px; line-height: 1.5; color: #222; margin: 4px 0 0; }
-    .detail b { font-weight: bold; }
-
-    .skills-row { display: flex; gap: 8px; font-size: 12.5px; line-height: 1.6; margin-bottom: 4px; }
-    .skills-label { font-weight: bold; width: 180px; flex-shrink: 0; }
-
-    ul.bullets {
-      margin: 8px 0 0;
-      padding-left: 18px;
-      font-size: 12.5px;
-      line-height: 1.55;
-      color: #222;
-    }
-    ul.bullets li { margin-bottom: 6px; }
-
-    .proj-link { font-size: 12.5px; }
-    .proj-link a { color: #1a1a1a; }
-
-    .tags { margin: 6px 0; font-size: 11.5px; color: #444; }
-
-    footer.page-footer {
-      margin-top: 30px;
-      padding-top: 12px;
-      border-top: 1px solid #ddd;
-      font-size: 11px;
-      color: #888;
-      text-align: center;
-    }
-
-    @media (max-width: 640px) {
-      .page { padding: 32px 20px; }
-      .skills-row { flex-direction: column; gap: 0; }
-      .skills-label { width: auto; }
-    }
-  </style>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232a2421' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='2'/%3E%3Cpath d='m3.5 6 8.5 7 8.5-7'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Courier+Prime&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="toolbar no-print">
-    <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Download PDF</a>
-    <button onclick="window.print()">Print</button>
-  </div>
+  <div class="wrap">
 
-  <main class="page">
-
-    <header class="top">
-      <h1>James Huynh</h1>
-      <p class="tagline">
-        Oklahoma City, OK &bull;
-        <a href="tel:+14055055160">405-505-5160</a> &bull;
-        <a href="mailto:jameshuynh.dev@gmail.com">jameshuynh.dev@gmail.com</a> &bull;
-        <a href="https://github.com/jameshuynh-dev" target="_blank" rel="noopener noreferrer">github.com/jameshuynh-dev</a> &bull;
-        <a href="https://www.linkedin.com/in/james-huynh-ai/" target="_blank" rel="noopener noreferrer">linkedin</a>
-      </p>
-      <p class="contact">
-        Seeking Software Development Internship
-      </p>
+    <header class="letterhead">
+      <a class="wordmark" href="index.html">James Huynh</a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#about">about</a>
+        <a href="#find-me">find me</a>
+        <a href="#projects">projects</a>
+        <a href="resume.html">résumé</a>
+      </nav>
     </header>
 
-    <h2 class="section">Education</h2>
+    <main>
 
-    <div class="entry">
-      <div class="entry-row">
-        <span class="entry-title">University of Central Oklahoma</span>
-        <span class="entry-date">Current &ndash; Expected Dec 2027</span>
+      <!-- about -->
+      <section id="about" class="letter taped" aria-label="About me">
+        <figure class="polaroid portrait taped sage">
+          <img src="img/me.jpg" alt="James leaning against a pillar at night, looking at his phone" width="720" height="900" />
+        </figure>
+        <img class="bear" src="img/maltese.png" alt="" width="202" height="214" />
+        <p class="dear">Dear visitor,</p>
+        <p>
+          Thanks for stopping by. I'm <strong>James Huynh</strong>, a computer science student at the
+          <span class="hl">University of Central Oklahoma</span>, where I'm working toward my B.S. (expected December 2027)
+          after finishing my associate's at Oklahoma City Community College.
+        </p>
+        <p>
+          I'm most interested in software engineering and AI. I enjoy building full-stack apps from start to finish, and
+          learning how AI &amp; machine learning can be applied to real business problems.
+        </p>
+        <p class="sign">— James</p>
+      </section>
+
+      <!-- hobbies -->
+      <h2 class="label">when I'm not coding</h2>
+      <div class="notes">
+        <div class="note taped">
+          <img class="note-photo" src="img/biking.jpg" alt="James in a bike helmet on a wooded trail" width="720" height="720" loading="lazy" />
+          <h3>mountain biking</h3>
+          <p>I like to stay active and get mental clarity from nature.</p>
+        </div>
+        <div class="note taped sage">
+          <img class="note-photo" src="img/videos.jpg" alt="Insta360 Ace Pro 2 action camera on a tripod mount" width="720" height="720" loading="lazy" />
+          <h3>making videos</h3>
+          <p>I like to record vlogs and travel.</p>
+        </div>
+        <div class="note taped">
+          <img class="note-photo" src="img/reading.jpg" alt="Pochacco figure in a detective coat holding a magnifying glass" width="720" height="720" loading="lazy" />
+          <h3>reading</h3>
+          <p>I love to learn and read.</p>
+          <p class="recs">Books I recommend: <em>Designing Machine Learning Systems</em> and <em>AI Engineering</em>, both by Chip Huyen.</p>
+        </div>
       </div>
-      <div class="entry-sub">Bachelor of Science in Computer Science (GPA: 3.66/4.0)</div>
-      <p class="detail"><b>Relevant coursework:</b> Advanced Data Structures &amp; Algorithms, Discrete Structures, Object-Oriented Programming, Operating Systems, Computer Organization &amp; Architecture II, Cybersecurity, Software Engineering I.</p>
-      <p class="detail"><b>Anticipated coursework:</b> Artificial Intelligence, Deep Learning, Machine Learning, Robotics.</p>
-    </div>
 
-    <div class="entry">
-      <div class="entry-row">
-        <span class="entry-title">Oklahoma City Community College</span>
-        <span class="entry-date">Jan 2024 &ndash; Dec 2025 &bull; Completed</span>
+      <!-- socials -->
+      <h2 class="label" id="find-me">find me</h2>
+      <div class="stamps">
+        <a class="stamp" href="https://www.instagram.com/dearhuynh/" target="_blank" rel="noopener noreferrer">
+          <div class="stamp-inner">
+            <div class="stamp-art">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" /></svg>
+            </div>
+            <div class="stamp-name">Instagram</div>
+            <div class="stamp-handle">@dearhuynh</div>
+          </div>
+        </a>
+        <a class="stamp" href="https://www.linkedin.com/in/james-huynh-ai/" target="_blank" rel="noopener noreferrer">
+          <div class="stamp-inner">
+            <div class="stamp-art">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" /><path d="M8 10.5V16M8 7.6v.1M12 16v-5.5M12 13c0-1.6 1-2.6 2.3-2.6S16.5 11.3 16.5 13v3" /></svg>
+            </div>
+            <div class="stamp-name">LinkedIn</div>
+            <div class="stamp-handle">james-huynh-ai</div>
+          </div>
+        </a>
+        <a class="stamp" href="https://github.com/jameshuynh-dev" target="_blank" rel="noopener noreferrer">
+          <div class="stamp-inner">
+            <div class="stamp-art">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1.4-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" /></svg>
+            </div>
+            <div class="stamp-name">GitHub</div>
+            <div class="stamp-handle">jameshuynh-dev</div>
+          </div>
+        </a>
+        <a class="stamp" href="mailto:jameshuynh.dev@gmail.com">
+          <div class="stamp-inner">
+            <div class="stamp-art">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3.5 6 8.5 7 8.5-7" /></svg>
+            </div>
+            <div class="stamp-name">Email</div>
+            <div class="stamp-handle">say hi</div>
+          </div>
+        </a>
       </div>
-      <div class="entry-sub">Associate of Science in Computer Science</div>
-    </div>
 
-    <h2 class="section">Technical Skills</h2>
+      <!-- projects -->
+      <h2 class="label" id="projects">projects</h2>
+      <div class="cards">
+        <article class="card">
+          <figure class="card-shot taped">
+            <img src="img/cosmo-mart.jpg" alt="Cosmo Mart storefront with neon logo and colorful product cards" width="1000" height="625" loading="lazy" />
+            <img class="inset" src="img/cosmo-gleb.jpg" alt="Chat with Gleb, the AI customer service agent, answering a return question" width="352" height="355" loading="lazy" />
+          </figure>
+          <div class="card-body">
+          <h3>Cosmo Mart</h3>
+          <div class="kicker">RAG-powered AI customer service</div>
+          <p>
+            A storefront with <strong>Gleb</strong>, an AI customer service agent. Instead of letting the model guess, Gleb looks up
+            the store's own product specs and policies (embedded with OpenAI and ranked by cosine similarity) and answers
+            from what it finds, with responses streamed in real time.
+          </p>
+          <ul class="stack">
+            <li>Next.js 15</li><li>TypeScript</li><li>Tailwind</li><li>Vercel AI SDK</li><li>OpenAI API</li><li>RAG</li>
+          </ul>
+          <div class="card-links">
+            <a href="https://cosmo-mart-alpha.vercel.app/" target="_blank" rel="noopener noreferrer">try the live demo ↗</a>
+          </div>
+          </div>
+        </article>
 
-    <div class="skills-row"><span class="skills-label">Languages</span><span>C++, Python, Java, HTML, CSS, SQL, TypeScript</span></div>
-    <div class="skills-row"><span class="skills-label">Frameworks &amp; Libraries</span><span>Next.js 15, React, Tailwind CSS, Vercel AI SDK</span></div>
-    <div class="skills-row"><span class="skills-label">AI &amp; Machine Learning</span><span>Retrieval-Augmented Generation (RAG), OpenAI API (gpt-4o-mini), Vector Embeddings (text-embedding-3-small), Cosine Similarity, Prompt Engineering</span></div>
-    <div class="skills-row"><span class="skills-label">Tools &amp; Platforms</span><span>Git, GitHub, Linux, PostgreSQL, Vercel, Claude Code, Agentic AI Development</span></div>
-
-    <h2 class="section">Technical Projects</h2>
-
-    <div class="entry">
-      <div class="entry-row">
-        <span class="entry-title">Cosmo Mart</span>
-        <span class="entry-date proj-link"><a href="https://cosmo-mart-alpha.vercel.app/" target="_blank" rel="noopener noreferrer">cosmo-mart-alpha.vercel.app</a></span>
+        <article class="card">
+          <figure class="card-shot taped sage">
+            <img src="img/hunt-log.jpg" alt="Hunt Log dashboard with status counts, follow-up panel, and applications table" width="831" height="519" loading="lazy" />
+          </figure>
+          <div class="card-body">
+          <h3>Hunt Log</h3>
+          <div class="kicker">full-stack internship tracker</div>
+          <p>
+            A tracker I built for my own internship search: a REST API in ASP.NET Core with Entity Framework and SQLite,
+            and a React + TypeScript dashboard that shows application status counts and who to follow up with today.
+            I planned it in phases with Claude Code, then reviewed, tested, and debugged each layer myself.
+          </p>
+          <ul class="stack">
+            <li>C#</li><li>ASP.NET Core</li><li>EF Core</li><li>SQLite</li><li>React</li><li>TypeScript</li>
+          </ul>
+          <div class="card-links">
+            <a href="https://github.com/jameshuynh-dev/hunt-log" target="_blank" rel="noopener noreferrer">view the source ↗</a>
+          </div>
+          </div>
+        </article>
       </div>
-      <div class="entry-sub">Enterprise &amp; RAG-Focused AI Customer Service Implementation</div>
-      <p class="tags">Next.js 15, TypeScript, Tailwind CSS, Vercel AI SDK, OpenAI API, In-Memory RAG Vector Engine</p>
-      <ul class="bullets">
-        <li>Architected a full-stack e-commerce storefront featuring "Gleb," an AI customer service agent powered by an in-memory RAG (Retrieval-Augmented Generation) pipeline to ground the foundation model's responses in verified internal data, company policies, and product specifications to deliver accurate, policy-compliant customer responses.</li>
-        <li>Built a custom, lightweight vector search engine using OpenAI text-embedding-3-small and cosine similarity, choosing an in-memory design to maximize lookup efficiency and eliminate external database overhead for static datasets.</li>
-        <li>Engineered a high-contrast UI with Next.js 15 App Router and streamed real-time AI responses via Vercel AI SDK, deployed to Vercel with automated CI/CD for continuous, 24/7 online availability.</li>
-      </ul>
-    </div>
 
-    <footer class="page-footer">
-      dearhuynh.com &bull; &copy; 2026 James Huynh
+      <!-- résumé -->
+      <h2 class="label" id="resume">résumé</h2>
+      <div class="envelope">
+        <div class="seal" aria-hidden="true">JH</div>
+        <h3>my résumé</h3>
+        <p>Education, skills, projects, and experience, all on one page.</p>
+        <div class="btns">
+          <a class="btn" href="resume.html">open it</a>
+          <a class="btn ghost" href="resume.pdf" download="James_Huynh_Resume.pdf">download PDF</a>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      <span class="hand">Oklahoma City</span>
+      dearhuynh.com &middot; &copy; 2026 James Huynh
     </footer>
 
-  </main>
+  </div>
 
 </body>
 </html>

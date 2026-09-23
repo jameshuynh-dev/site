@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Résumé — James Huynh</title>
+  <meta name="description" content="Résumé of James Huynh, computer science student focused on software engineering and AI." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232a2421' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='2'/%3E%3Cpath d='m3.5 6 8.5 7 8.5-7'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Courier+Prime&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .toolbar { display: flex; gap: 10px; flex-wrap: wrap; justify-content: space-between; align-items: center; margin: 12px 0 26px; }
+    .toolbar .btns { justify-content: flex-end; }
+    .back { font-family: var(--type); font-size: 14px; text-decoration: none; color: var(--ink-soft); }
+
+    .sheet {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      padding: 60px 64px 48px;
+      font-size: 16.5px;
+      line-height: 1.5;
+    }
+    .sheet header { text-align: center; margin-bottom: 8px; }
+    .sheet h1 { margin: 0; font-size: 40px; font-weight: 600; letter-spacing: 0.5px; line-height: 1.1; }
+    .sheet .headline { margin: 4px 0 10px; font-style: italic; font-size: 18px; color: var(--ink-soft); }
+    .sheet .contact { font-family: var(--type); font-size: 12.5px; color: var(--ink-soft); line-height: 1.8; }
+    .sheet .contact a { text-decoration: none; }
+    .sheet .contact a:hover { text-decoration: underline; }
+    .sheet .contact span + span::before { content: "·"; margin: 0 8px; color: var(--muted); }
+
+    .sheet h2 {
+      display: flex; align-items: center; gap: 10px;
+      margin: 30px 0 12px; padding-bottom: 5px;
+      border-bottom: 1px solid var(--ink);
+      font-family: var(--type); font-weight: 400; font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+    }
+
+    .entry { margin-bottom: 16px; }
+    .row { display: flex; justify-content: space-between; align-items: baseline; gap: 4px 12px; flex-wrap: wrap; }
+    .title { font-weight: 600; font-size: 18px; }
+    .meta { font-family: var(--type); font-size: 12.5px; color: var(--ink-soft); white-space: nowrap; }
+    .sub { font-style: italic; color: var(--ink-soft); }
+    .detail { margin: 4px 0 0; }
+    .tags { font-family: var(--type); font-size: 12px; color: var(--muted); margin: 4px 0 0; }
+    .sheet ul { margin: 6px 0 0; padding-left: 20px; }
+    .sheet li { margin-bottom: 4px; }
+    .skills { display: grid; grid-template-columns: 190px 1fr; gap: 4px 14px; }
+    .skills dt { font-weight: 600; }
+    .skills dd { margin: 0; }
+
+    @media (max-width: 640px) {
+      .sheet { padding: 36px 20px; font-size: 16px; }
+      .sheet h1 { font-size: 34px; }
+      .skills { grid-template-columns: 1fr; }
+      .skills dd { margin-bottom: 8px; }
+      .toolbar { justify-content: center; }
+    }
+
+    @media print {
+      @page { margin: 0.5in; }
+      body { background: #fff; font-size: 11pt; }
+      .no-print { display: none !important; }
+      .wrap { max-width: none; padding: 0; }
+      .sheet { box-shadow: none; padding: 0; max-width: none; font-size: 11pt; }
+      a { color: inherit !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <header class="letterhead no-print">
+      <a class="wordmark" href="index.html">James Huynh</a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html#about">about</a>
+        <a href="index.html#find-me">find me</a>
+        <a href="index.html#projects">projects</a>
+        <a href="resume.html">résumé</a>
+      </nav>
+    </header>
+
+    <div class="toolbar no-print">
+      <a class="back" href="index.html">← back to the letter</a>
+      <div class="btns">
+        <a class="btn" href="resume.pdf" download="James_Huynh_Resume.pdf">download PDF</a>
+        <button class="btn ghost" type="button" onclick="window.print()">print</button>
+      </div>
+    </div>
+
+    <main class="sheet">
+
+      <header>
+        <h1>James Huynh</h1>
+        <p class="headline">Computer Science Student · Software Engineering &amp; AI</p>
+        <div class="contact">
+          <span>Oklahoma City, OK</span>
+          <span><a href="tel:+14055055160">405-505-5160</a></span>
+          <span><a href="mailto:jameshuynh.dev@gmail.com">jameshuynh.dev@gmail.com</a></span>
+          <br />
+          <span><a href="https://github.com/jameshuynh-dev" target="_blank" rel="noopener noreferrer">github.com/jameshuynh-dev</a></span>
+          <span><a href="https://www.linkedin.com/in/james-huynh-ai/" target="_blank" rel="noopener noreferrer">linkedin.com/in/james-huynh-ai</a></span>
+          <span><a href="https://dearhuynh.com">dearhuynh.com</a></span>
+        </div>
+      </header>
+
+      <h2>Education</h2>
+
+      <div class="entry">
+        <div class="row">
+          <span class="title">University of Central Oklahoma</span>
+          <span class="meta">Edmond, OK · Jan 2026 – Dec 2027</span>
+        </div>
+        <div class="sub">Bachelor of Science in Computer Science (GPA: 3.66/4.0)</div>
+        <p class="detail"><strong>Relevant coursework:</strong> Advanced Data Structures &amp; Algorithms, Discrete Structures, Object-Oriented Programming, Operating Systems, Computer Organization &amp; Architecture II, Cybersecurity, Software Engineering I.</p>
+        <p class="detail"><strong>Anticipated coursework:</strong> Artificial Intelligence, Deep Learning, Machine Learning, Robotics.</p>
+      </div>
+
+      <div class="entry">
+        <div class="row">
+          <span class="title">Oklahoma City Community College</span>
+          <span class="meta">Oklahoma City, OK · Jan 2024 – Dec 2025</span>
+        </div>
+        <div class="sub">Associate of Science in Computer Science (GPA: 3.8)</div>
+      </div>
+
+      <h2>Technical Skills</h2>
+
+      <dl class="skills">
+        <dt>Languages</dt><dd>Python, C++, Java, TypeScript, SQL, HTML/CSS</dd>
+        <dt>Frameworks &amp; Libraries</dt><dd>Next.js 15, React, Tailwind CSS, Vercel AI SDK</dd>
+        <dt>AI &amp; Machine Learning</dt><dd>Retrieval-Augmented Generation (RAG), Vector Embeddings, Cosine Similarity, OpenAI API, Prompt Engineering, Agentic AI Development</dd>
+        <dt>Tools &amp; Platforms</dt><dd>Git, Linux (Ubuntu), Vercel, Claude Code (AI-assisted development)</dd>
+        <dt>Currently Learning</dt><dd>C#, ASP.NET Core Web API, React + TypeScript, SQL Server, Azure DevOps (building a full-stack SQL → ASP.NET → React project)</dd>
+      </dl>
+
+      <h2>Technical Projects</h2>
+
+      <div class="entry">
+        <div class="row">
+          <span class="title">Cosmo Mart <span class="sub">| RAG-Powered AI Customer Service Chatbot</span></span>
+          <span class="meta"><a href="https://cosmo-mart-alpha.vercel.app/" target="_blank" rel="noopener noreferrer">live demo ↗</a></span>
+        </div>
+        <p class="tags">Next.js 15, TypeScript, Tailwind CSS, Vercel AI SDK, OpenAI API, In-Memory RAG Vector Engine</p>
+        <ul>
+          <li>Built a rapid prototype of a full-stack storefront featuring “Gleb”, an AI customer service agent that uses a RAG (Retrieval-Augmented Generation) pipeline to ground the model’s answers in store data, policies, and product specs instead of letting it guess.</li>
+          <li>Implemented retrieval by embedding a JSON knowledge base with OpenAI text-embedding-3-small and ranking matches by cosine similarity, kept in memory since the dataset is small and static.</li>
+          <li>Built the UI with Next.js 15 (React + TypeScript), streamed AI responses with the Vercel AI SDK, and deployed on Vercel with automatic deploys from Git.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="row">
+          <span class="title">Hunt Log <span class="sub">| Full-Stack Internship Application Tracker</span></span>
+          <span class="meta"><a href="https://github.com/jameshuynh-dev/hunt-log" target="_blank" rel="noopener noreferrer">source code ↗</a></span>
+        </div>
+        <p class="tags">C#, ASP.NET Core Web API, Entity Framework Core, SQLite, React, TypeScript, Tailwind CSS</p>
+        <ul>
+          <li>Built a tracker for my own internship search, developed with AI assistance (Claude Code): I planned the build in phases, then reviewed, tested, and debugged each step to learn how every layer works.</li>
+          <li>Designed a REST API with ASP.NET Core controllers (full CRUD), using Entity Framework Core code-first migrations and a one-to-many Applications → Contacts foreign key with cascade delete.</li>
+          <li>Built a typed React + TypeScript dashboard with status counts and a “follow up today” panel, and configured CORS so the browser client can safely call the API.</li>
+        </ul>
+      </div>
+
+      <h2>Work Experience</h2>
+
+      <div class="entry">
+        <div class="row">
+          <span class="title">Behavioral Technician <span class="sub">| Lakeland Behavioral Health Institute</span></span>
+          <span class="meta">May 2022 – Sep 2022</span>
+        </div>
+        <ul>
+          <li>Maintained accurate, confidential patient documentation in line with facility protocols.</li>
+          <li>De-escalated crisis situations and stayed calm under pressure while coordinating with nurses, therapists, and staff.</li>
+          <li>Led group activities for patients and took initiative in day-to-day patient care beyond assigned tasks.</li>
+        </ul>
+      </div>
+
+    </main>
+
+    <footer class="footer no-print">
+      <span class="hand">thanks for reading</span>
+      dearhuynh.com &middot; &copy; 2026 James Huynh
+    </footer>
+
+  </div>
+
+</body>
+</html>
