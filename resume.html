@@ -113,10 +113,10 @@
       <div class="entry">
         <div class="row">
           <span class="title">University of Central Oklahoma</span>
-          <span class="meta">Edmond, OK · Jan 2026 – Dec 2027</span>
+          <span class="meta">Edmond, OK · Expected Dec 2027</span>
         </div>
         <div class="sub">Bachelor of Science in Computer Science (GPA: 3.66/4.0)</div>
-        <p class="detail"><strong>Relevant coursework:</strong> Advanced Data Structures &amp; Algorithms, Discrete Structures, Object-Oriented Programming, Operating Systems, Computer Organization &amp; Architecture II, Cybersecurity, Software Engineering I.</p>
+        <p class="detail"><strong>Relevant coursework:</strong> Software Engineering I, Advanced Data Structures &amp; Algorithms, Object-Oriented Programming, Operating Systems, Cybersecurity, Discrete Structures, Computer Organization &amp; Architecture II.</p>
         <p class="detail"><strong>Anticipated coursework:</strong> Artificial Intelligence, Deep Learning, Machine Learning, Robotics.</p>
       </div>
 
@@ -132,29 +132,39 @@
 
       <dl class="skills">
         <dt>Languages</dt><dd>Python, C++, Java, TypeScript, SQL, HTML/CSS</dd>
-        <dt>Frameworks &amp; Libraries</dt><dd>Next.js 15, React, Tailwind CSS, Vercel AI SDK</dd>
-        <dt>AI &amp; Machine Learning</dt><dd>Retrieval-Augmented Generation (RAG), Vector Embeddings, Cosine Similarity, OpenAI API, Prompt Engineering, Agentic AI Development</dd>
-        <dt>Tools &amp; Platforms</dt><dd>Git, Linux (Ubuntu), Vercel, Claude Code (AI-assisted development)</dd>
-        
+        <dt>Frameworks &amp; Libraries</dt><dd>Next.js, React, Tailwind CSS, Vercel AI SDK</dd>
+        <dt>Applied AI</dt><dd>Retrieval-Augmented Generation (RAG), Vector Embeddings, Semantic Search, OpenAI API</dd>
+        <dt>Software Engineering</dt><dd>Object-Oriented Design, Data Structures &amp; Algorithms, Requirements Analysis, UML, Git/GitHub</dd>
+      </dl>
 
       <h2>Technical Projects</h2>
 
       <div class="entry">
         <div class="row">
-          <span class="title">Cosmo Mart <span class="sub">| RAG-Powered AI Customer Service Chatbot</span></span>
-          <span class="meta"><a href="https://cosmo-mart-alpha.vercel.app/" target="_blank" rel="noopener noreferrer">live demo ↗</a></span>
+          <span class="title">RAG-Powered AI Customer Service Chatbot</span>
+          <span class="meta"><a href="https://cosmo-mart-alpha.vercel.app/" target="_blank" rel="noopener noreferrer">live demo ↗</a> · <a href="https://github.com/jameshuynh-dev/cosmo-mart" target="_blank" rel="noopener noreferrer">code ↗</a></span>
         </div>
-        <p class="tags">Next.js 15, TypeScript, Tailwind CSS, Vercel AI SDK, OpenAI API, In-Memory RAG Vector Engine</p>
+        <p class="tags">Next.js, TypeScript, Tailwind CSS, Vercel AI SDK, OpenAI API (GPT-4o-mini, text-embedding-3-small)</p>
         <ul>
-          <li>Built a rapid prototype of a full-stack storefront featuring “Gleb”, an AI customer service agent that uses a RAG (Retrieval-Augmented Generation) pipeline to ground the model’s answers in store data, policies, and product specs instead of letting it guess.</li>
-          <li>Implemented retrieval by embedding a JSON knowledge base with OpenAI text-embedding-3-small and ranking matches by cosine similarity, kept in memory since the dataset is small and static.</li>
-          <li>Built the UI with Next.js 15 (React + TypeScript), streamed AI responses with the Vercel AI SDK, and deployed on Vercel with automatic deploys from Git.</li>
+          <li>Built a full-stack e-commerce storefront with an AI customer service agent that answers shopper questions about products, returns, payment methods, and store hours using retrieval-augmented generation (RAG).</li>
+          <li>Designed the retrieval pipeline: embedded a JSON knowledge base of 30 products and store policies with OpenAI text-embedding-3-small and wrote an in-memory cosine similarity search, skipping a vector database since the data is small and static.</li>
+          <li>Limited the model (GPT-4o-mini) to answering only from retrieved store data and having it say when information isn’t on file, instead of guessing.</li>
+          <li>Built the UI with Next.js and TypeScript, streamed responses with the Vercel AI SDK, and set up continuous deployment to Vercel from GitHub.</li>
         </ul>
       </div>
 
-      
-
       <h2>Work Experience</h2>
+
+      <div class="entry">
+        <div class="row">
+          <span class="title">Delivery Driver <span class="sub">| DoorDash</span></span>
+          <span class="meta">2025 – Present</span>
+        </div>
+        <ul>
+          <li>Completed 994 deliveries with a 5.0 customer rating while in school full-time.</li>
+          <li>Worked flexible hours around classes and handled order issues with customers and restaurants.</li>
+        </ul>
+      </div>
 
       <div class="entry">
         <div class="row">
@@ -164,7 +174,7 @@
         <ul>
           <li>Maintained accurate, confidential patient documentation in line with facility protocols.</li>
           <li>De-escalated crisis situations and stayed calm under pressure while coordinating with nurses, therapists, and staff.</li>
-          <li>Led group activities for patients and took initiative in day-to-day patient care beyond assigned tasks.</li>
+          <li>Led daily group activities and supported patient care for a unit of 15–20 patients.</li>
         </ul>
       </div>
 
