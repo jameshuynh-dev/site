@@ -148,26 +148,19 @@ a:hover { color: var(--sage); }
 .letter .ps { font-style: italic; color: var(--ink-soft); margin: 34px 0 0; }
 .letter .ps b { font-style: normal; font-family: var(--type); font-size: 14px; letter-spacing: 1px; }
 
-/* typing reveal (typing.js) */
-.tw-pending #about > p { visibility: hidden; }
-.tw-c { opacity: 0; transition: opacity .22s ease-out; }
-.tw-c.on { opacity: 1; }
-.hl { background-repeat: no-repeat; background-size: 100% 100%; transition: background-size .7s ease; }
-.hl.tw-wait { background-size: 0% 100%; }
-.tw-caret { display: inline-block; position: relative; width: 0; height: 1em; vertical-align: -0.12em; }
-.tw-caret::after {
-  content: "";
-  position: absolute;
-  left: 1px;
-  top: 0;
-  width: 1.5px;
-  height: 100%;
-  background: var(--ink-soft);
-  animation: tw-blink 1s steps(1) infinite;
+/* line-by-line fade in (fade-in.js) */
+.fi-pending #about > p { visibility: hidden; }
+.fi-run .fi-w {
+  display: inline-block;
+  opacity: 0;
+  animation: fi-in .9s cubic-bezier(.22, .61, .36, 1) both;
 }
-.tw-caret-out::after { animation: tw-blink 1s steps(1) 2, tw-fade .5s ease 2s forwards; }
-@keyframes tw-blink { 50% { opacity: 0; } }
-@keyframes tw-fade { to { opacity: 0; } }
+@keyframes fi-in {
+  from { opacity: 0; transform: translateY(6px); filter: blur(3px); }
+  to   { opacity: 1; transform: none; filter: none; }
+}
+.hl { background-repeat: no-repeat; background-size: 100% 100%; transition: background-size .8s ease; }
+.hl.fi-wait { background-size: 0% 100%; }
 
 .hl {
   background: linear-gradient(transparent 55%, var(--sage-soft) 55% 90%, transparent 90%);
