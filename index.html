@@ -5,157 +5,169 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>James Huynh</title>
 
-  <!-- Security & Trust Meta Tags -->
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="James Huynh" />
-  <meta name="description" content="Personal portfolio and resume of James Huynh, Computer Science student at UCO." />
+  <meta name="description" content="James Huynh, computer science student at the University of Central Oklahoma, focused on software engineering and AI." />
 
-  <!-- Open Graph / Social Sharing Meta Tags -->
   <meta property="og:title" content="James Huynh" />
-  <meta property="og:description" content="Personal site portfolio and resume of James Huynh." />
+  <meta property="og:description" content="Computer science student at the University of Central Oklahoma, focused on software engineering and AI." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dearhuynh.com" />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232a2421' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='2'/%3E%3Cpath d='m3.5 6 8.5 7 8.5-7'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23202429'/%3E%3Ctext x='16' y='21.5' text-anchor='middle' font-family='system-ui,sans-serif' font-size='14' font-weight='600' fill='%23f2c14e'%3EJH%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Courier+Prime&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <script>
-    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.documentElement.classList.add('fi-pending');
-      setTimeout(() => document.documentElement.classList.remove('fi-pending'), 3000);
-    }
-  </script>
-  <script src="fade-in.js" defer></script>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <div class="wrap">
-
-    <header class="letterhead">
-      <a class="wordmark" href="index.html">James Huynh</a>
-      <nav class="nav" aria-label="Sections">
-        <a href="#about">about</a>
-        <a href="#find-me">find me</a>
-        <a href="#projects">projects</a>
-        <a href="resume.html">résumé</a>
+  <header class="mast">
+    <div class="container mast-row">
+      <nav class="mast-links" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
       </nav>
-    </header>
+      <a class="wordmark" href="index.html">James Huynh</a>
+      <nav class="mast-links mast-links--end" aria-label="Contact">
+        <a href="resume.html">Resume</a>
+        <a href="#find-me">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <main>
+  <main id="main">
 
-      <!-- about -->
-      <section id="about" class="letter taped" aria-label="About me">
-        <figure class="polaroid portrait taped sage">
-          <img src="img/me.jpg" alt="James leaning against a pillar at night, looking at his phone" width="720" height="900" />
-        </figure>
-        <img class="bear" src="img/maltese.png" alt="" width="202" height="214" />
-        <p class="dear">Dear visitor,</p>
-        <p>
-          Thanks for stopping by. I'm <strong>James Huynh</strong>, a computer science student at the
-          <span class="hl">University of Central Oklahoma</span>, where I'm working toward my B.S. (expected December 2027)
-          after finishing my associate's at Oklahoma City Community College.
-        </p>
-        <p>
-          I'm most interested in software engineering and AI. I enjoy building full-stack apps from start to finish, and
-          learning how AI &amp; machine learning can be applied to real business problems.
-        </p>
-        <p class="sign">— James</p>
-      </section>
-
-      <!-- socials -->
-      <h2 class="label" id="find-me">find me</h2>
-      <div class="stamps">
-        <a class="stamp" href="https://www.instagram.com/dearhuynh/" target="_blank" rel="noopener noreferrer">
-          <div class="stamp-inner">
-            <div class="stamp-art">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" /></svg>
-            </div>
-            <div class="stamp-name">Instagram</div>
-            <div class="stamp-handle">@dearhuynh</div>
-          </div>
-        </a>
-        <a class="stamp" href="https://www.linkedin.com/in/james-huynh-ai/" target="_blank" rel="noopener noreferrer">
-          <div class="stamp-inner">
-            <div class="stamp-art">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" /><path d="M8 10.5V16M8 7.6v.1M12 16v-5.5M12 13c0-1.6 1-2.6 2.3-2.6S16.5 11.3 16.5 13v3" /></svg>
-            </div>
-            <div class="stamp-name">LinkedIn</div>
-            <div class="stamp-handle">james-huynh-ai</div>
-          </div>
-        </a>
-        <a class="stamp" href="https://github.com/jameshuynh-dev" target="_blank" rel="noopener noreferrer">
-          <div class="stamp-inner">
-            <div class="stamp-art">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1.4-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" /></svg>
-            </div>
-            <div class="stamp-name">GitHub</div>
-            <div class="stamp-handle">jameshuynh-dev</div>
-          </div>
-        </a>
-        <a class="stamp" href="mailto:jameshuynh.dev@gmail.com">
-          <div class="stamp-inner">
-            <div class="stamp-art">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3.5 6 8.5 7 8.5-7" /></svg>
-            </div>
-            <div class="stamp-name">Email</div>
-            <div class="stamp-handle">say hi</div>
-          </div>
-        </a>
-      </div>
-
-      <!-- projects -->
-      <h2 class="label" id="projects">projects</h2>
-      <div class="cards">
-        <article class="card">
-          <figure class="card-shot taped">
-            <img src="img/cosmo-mart.jpg" alt="Cosmo Mart storefront with neon logo and colorful product cards" width="1000" height="625" loading="lazy" />
-            <img class="inset" src="img/cosmo-gleb.jpg" alt="Chat with Gleb, the AI customer service agent, answering a return question" width="352" height="355" loading="lazy" />
-          </figure>
-          <div class="card-body">
-          <h3>Cosmo Mart</h3>
-          <div class="kicker">RAG-powered AI customer service</div>
-          <p>
-            A storefront with <strong>Gleb</strong>, an AI customer service agent. Instead of letting the model guess, Gleb looks up
-            the store's own product specs and policies (embedded with OpenAI and ranked by cosine similarity) and answers
-            from what it finds, with responses streamed in real time.
-          </p>
-          <ul class="stack">
-            <li>Next.js 15</li><li>TypeScript</li><li>Tailwind</li><li>Vercel AI SDK</li><li>OpenAI API</li><li>RAG</li>
-          </ul>
-          <div class="card-links">
-            <a href="https://cosmo-mart-alpha.vercel.app/" target="_blank" rel="noopener noreferrer">try the live demo ↗</a>
-          </div>
-          </div>
-        </article>
-
-        
-      </div>
-
-      <!-- résumé -->
-      <h2 class="label" id="resume">résumé</h2>
-      <div class="envelope">
-        <div class="seal" aria-hidden="true">JH</div>
-        <h3>my résumé</h3>
-        <p>Education, skills, projects, and experience, all on one page.</p>
-        <div class="btns">
-          <a class="btn" href="resume.html">open it</a>
-          <a class="btn ghost" href="resume.pdf" download="James_Huynh_Resume.pdf">download PDF</a>
+    <section class="hero" aria-labelledby="hero-head">
+      <div class="container hero-col">
+        <img class="avatar" src="img/me.jpg" alt="James Huynh" width="720" height="900" fetchpriority="high" />
+        <h1 id="hero-head">I build full-stack apps, start to finish.</h1>
+        <p class="lead">Computer science student at the University of Central Oklahoma, graduating December 2027.</p>
+        <div class="actions">
+          <a class="btn btn--primary" href="mailto:jameshuynh.dev@gmail.com">Email me</a>
+          <a class="btn" href="resume.pdf" download="James_Huynh_Resume.pdf">Download resume</a>
         </div>
       </div>
+    </section>
 
-    </main>
+    <section id="about" class="section" aria-labelledby="about-head">
+      <div class="container">
+        <h2 id="about-head">About me</h2>
+        <div class="panels about">
+          <figure class="about-photo">
+            <img class="portrait" src="img/me.jpg" alt="James leaning against a pillar at night, looking at his phone" width="720" height="900" loading="lazy" />
+          </figure>
+          <div class="about-text">
+            <p class="lead">I’m most interested in software engineering and AI.</p>
+            <p>I enjoy building full-stack apps from start to finish, and learning how AI and machine learning can be applied to real business problems.</p>
+            <p>I finished my associate’s at Oklahoma City Community College and I’m now working toward my B.S. at UCO.</p>
+          </div>
+          <dl class="fact">
+            <dt>Based in</dt>
+            <dd>Oklahoma City, OK</dd>
+          </dl>
+          <dl class="fact">
+            <dt>Studying</dt>
+            <dd>B.S. Computer Science</dd>
+          </dl>
+          <dl class="fact">
+            <dt>Graduating</dt>
+            <dd class="measured">Dec 2027</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
 
-    <footer class="footer">
-      <span class="hand">Oklahoma City</span>
-      dearhuynh.com &middot; &copy; 2026 James Huynh
-    </footer>
+    <section id="education" class="section band" aria-labelledby="edu-head">
+      <div class="container edu">
+        <div class="edu-reading">
+          <h2 id="edu-head">Education</h2>
+          <p class="reading" aria-label="GPA 3.66 out of 4.0">3.66</p>
+          <p class="reading-note">GPA at UCO, out of 4.0</p>
+        </div>
+        <ol class="trail">
+          <li>
+            <h3>University of Central Oklahoma</h3>
+            <p class="trail-meta"><span class="measured cool">Expected Dec 2027</span><span>Edmond, OK</span></p>
+            <p>Bachelor of Science in Computer Science</p>
+            <p class="muted">Coursework: Advanced Data Structures and Algorithms, Operating Systems, Computer Organization and Architecture II (Assembly), Software Engineering I, Object-Oriented Programming, Cybersecurity, Linear Algebra, Discrete Structures.</p>
+            <p class="muted">Upcoming: Artificial Intelligence, Machine Learning, Deep Learning.</p>
+          </li>
+          <li>
+            <h3>Oklahoma City Community College</h3>
+            <p class="trail-meta"><span class="measured cool">Jan 2024 to Dec 2025</span><span>Oklahoma City, OK</span></p>
+            <p>Associate of Science in Computer Science, GPA 3.8</p>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-  </div>
+    <section id="skills" class="section" aria-labelledby="skills-head">
+      <div class="container">
+        <h2 id="skills-head">Technical skills</h2>
+        <table class="skills">
+          <tbody>
+            <tr><th scope="row">Languages</th><td>Python, C#, TypeScript, JavaScript, SQL, C++, Java</td></tr>
+            <tr><th scope="row">AI engineering</th><td>Retrieval-augmented generation (RAG), embeddings, semantic search, prompt design and grounding, LLM streaming, OpenAI API</td></tr>
+            <tr><th scope="row">Backend and data</th><td>ASP.NET Core, Web API, RESTful APIs, relational database design, SQLite</td></tr>
+            <tr><th scope="row">Frontend</th><td>React, Next.js, Tailwind CSS</td></tr>
+            <tr><th scope="row">Tools and platforms</th><td>Git, GitHub, Linux, Google Cloud, VS Code, UML</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="experience" class="section" aria-labelledby="exp-head">
+      <div class="container">
+        <h2 id="exp-head">Work experience</h2>
+        <div class="panels jobs">
+          <article class="job">
+            <h3>Delivery Driver</h3>
+            <p class="trail-meta"><span class="measured cool">2025 to Present</span><span>DoorDash, Oklahoma City</span></p>
+            <div class="job-readings">
+              <p><span class="reading-s">994</span> deliveries</p>
+              <p><span class="reading-s">5.0</span> customer rating</p>
+            </div>
+            <p class="muted">Done while in school full-time, resolving order issues with customers and restaurants in real time.</p>
+          </article>
+          <article class="job">
+            <h3>Behavioral Technician</h3>
+            <p class="trail-meta"><span class="measured cool">May 2022 to Sep 2022</span><span>Lakeland Behavioral Health, Springfield, MO</span></p>
+            <ul class="muted">
+              <li>Maintained accurate, confidential patient records under strict facility protocols and privacy requirements.</li>
+              <li>De-escalated crisis situations and coordinated with nurses and therapists across a unit of 15 to 20 patients.</li>
+              <li>Led daily group activities.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="find-me" class="section close" aria-labelledby="contact-head">
+      <div class="container">
+        <h2 id="contact-head">Get in touch</h2>
+        <a class="email" href="mailto:jameshuynh.dev@gmail.com">jameshuynh.dev@gmail.com</a>
+        <ul class="links">
+          <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/james-huynh-ai/" target="_blank" rel="noopener noreferrer">linkedin.com/in/james-huynh-ai</a></li>
+          <li><span>GitHub</span><a href="https://github.com/jameshuynh-dev" target="_blank" rel="noopener noreferrer">github.com/jameshuynh-dev</a></li>
+          <li><span>Instagram</span><a href="https://www.instagram.com/dearhuynh/" target="_blank" rel="noopener noreferrer">@dearhuynh</a></li>
+          <li id="resume"><span>Resume</span><a href="resume.html">Read it here</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="colophon">
+    <div class="container">
+      <p>James Huynh, Oklahoma City. This is dearhuynh.com, &copy; 2026.</p>
+    </div>
+  </footer>
 
 </body>
 </html>

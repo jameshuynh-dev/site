@@ -3,109 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Résumé — James Huynh</title>
-  <meta name="description" content="Résumé of James Huynh, computer science student focused on software engineering and AI." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232a2421' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='2'/%3E%3Cpath d='m3.5 6 8.5 7 8.5-7'/%3E%3C/svg%3E" />
+  <title>Resume, James Huynh</title>
+  <meta name="description" content="Resume of James Huynh, computer science student focused on software engineering and AI." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23202429'/%3E%3Ctext x='16' y='21.5' text-anchor='middle' font-family='system-ui,sans-serif' font-size='14' font-weight='600' fill='%23f2c14e'%3EJH%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Courier+Prime&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .toolbar { display: flex; gap: 10px; flex-wrap: wrap; justify-content: space-between; align-items: center; margin: 12px 0 26px; }
-    .toolbar .btns { justify-content: flex-end; }
-    .back { font-family: var(--type); font-size: 14px; text-decoration: none; color: var(--ink-soft); }
-
-    .sheet {
-      max-width: 800px;
-      margin: 0 auto;
-      background: var(--paper);
-      box-shadow: var(--shadow);
-      padding: 60px 64px 48px;
-      font-size: 16.5px;
-      line-height: 1.5;
-    }
-    .sheet header { text-align: center; margin-bottom: 8px; }
-    .sheet h1 { margin: 0; font-size: 40px; font-weight: 600; letter-spacing: 0.5px; line-height: 1.1; }
-    .sheet .headline { margin: 4px 0 10px; font-style: italic; font-size: 18px; color: var(--ink-soft); }
-    .sheet .contact { font-family: var(--type); font-size: 12.5px; color: var(--ink-soft); line-height: 1.8; }
-    .sheet .contact a { text-decoration: none; }
-    .sheet .contact a:hover { text-decoration: underline; }
-    .sheet .contact span + span::before { content: "·"; margin: 0 8px; color: var(--muted); }
-
-    .sheet h2 {
-      display: flex; align-items: center; gap: 10px;
-      margin: 30px 0 12px; padding-bottom: 5px;
-      border-bottom: 1px solid var(--ink);
-      font-family: var(--type); font-weight: 400; font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
-    }
-
-    .entry { margin-bottom: 16px; }
-    .row { display: flex; justify-content: space-between; align-items: baseline; gap: 4px 12px; flex-wrap: wrap; }
-    .title { font-weight: 600; font-size: 18px; }
-    .meta { font-family: var(--type); font-size: 12.5px; color: var(--ink-soft); white-space: nowrap; }
-    .sub { font-style: italic; color: var(--ink-soft); }
-    .detail { margin: 4px 0 0; }
-    .tags { font-family: var(--type); font-size: 12px; color: var(--muted); margin: 4px 0 0; }
-    .sheet ul { margin: 6px 0 0; padding-left: 20px; }
-    .sheet li { margin-bottom: 4px; }
-    .skills { display: grid; grid-template-columns: 190px 1fr; gap: 4px 14px; }
-    .skills dt { font-weight: 600; }
-    .skills dd { margin: 0; }
-
-    @media (max-width: 640px) {
-      .sheet { padding: 36px 20px; font-size: 16px; }
-      .sheet h1 { font-size: 34px; }
-      .skills { grid-template-columns: 1fr; }
-      .skills dd { margin-bottom: 8px; }
-      .toolbar { justify-content: center; }
-    }
-
-    @media print {
-      @page { margin: 0.5in; }
-      body { background: #fff; font-size: 11pt; }
-      .no-print { display: none !important; }
-      .wrap { max-width: none; padding: 0; }
-      .sheet { box-shadow: none; padding: 0; max-width: none; font-size: 11pt; }
-      a { color: inherit !important; }
-    }
-  </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <div class="wrap">
-
-    <header class="letterhead no-print">
-      <a class="wordmark" href="index.html">James Huynh</a>
-      <nav class="nav" aria-label="Site">
-        <a href="index.html#about">about</a>
-        <a href="index.html#find-me">find me</a>
-        <a href="index.html#projects">projects</a>
-        <a href="resume.html">résumé</a>
+  <header class="mast no-print">
+    <div class="container mast-row">
+      <nav class="mast-links" aria-label="Sections">
+        <a href="index.html#about">About</a>
+        <a href="index.html#education">Education</a>
+        <a href="index.html#experience">Experience</a>
       </nav>
-    </header>
+      <a class="wordmark" href="index.html">James Huynh</a>
+      <nav class="mast-links mast-links--end" aria-label="Contact">
+        <a href="resume.html" aria-current="page">Resume</a>
+        <a href="index.html#find-me">Contact</a>
+      </nav>
+    </div>
+  </header>
 
+  <div class="container">
     <div class="toolbar no-print">
-      <a class="back" href="index.html">← back to the letter</a>
-      <div class="btns">
-        <a class="btn" href="resume.pdf" download="James_Huynh_Resume.pdf">download PDF</a>
-        <button class="btn ghost" type="button" onclick="window.print()">print</button>
+      <a href="index.html">Back to the home page</a>
+      <div class="actions">
+        <a class="btn btn--primary" href="resume.pdf" download="James_Huynh_Resume.pdf">Download PDF</a>
+        <button class="btn" type="button" onclick="window.print()">Print</button>
       </div>
     </div>
 
-    <main class="sheet">
+    <main id="main" class="sheet">
 
       <header>
         <h1>James Huynh</h1>
-        <p class="headline">Computer Science Student · Software Engineering &amp; AI</p>
-        <div class="contact">
+        <p class="contact">
           <span>Oklahoma City, OK</span>
-          <span><a href="tel:+14055055160">405-505-5160</a></span>
-          <span><a href="mailto:jameshuynh.dev@gmail.com">jameshuynh.dev@gmail.com</a></span>
-          <br />
-          <span><a href="https://github.com/jameshuynh-dev" target="_blank" rel="noopener noreferrer">github.com/jameshuynh-dev</a></span>
-          <span><a href="https://www.linkedin.com/in/james-huynh-ai/" target="_blank" rel="noopener noreferrer">linkedin.com/in/james-huynh-ai</a></span>
-          <span><a href="https://dearhuynh.com">dearhuynh.com</a></span>
-        </div>
+          <a href="tel:+14055055160">405-505-5160</a>
+          <a href="mailto:jameshuynh.dev@gmail.com">jameshuynh.dev@gmail.com</a>
+          <a href="https://www.linkedin.com/in/james-huynh-ai/" target="_blank" rel="noopener noreferrer">linkedin.com/in/james-huynh-ai</a>
+          <a href="https://github.com/jameshuynh-dev" target="_blank" rel="noopener noreferrer">github.com/jameshuynh-dev</a>
+          <a href="https://dearhuynh.com">dearhuynh.com</a>
+        </p>
       </header>
 
       <h2>Education</h2>
@@ -113,79 +57,78 @@
       <div class="entry">
         <div class="row">
           <span class="title">University of Central Oklahoma</span>
-          <span class="meta">Edmond, OK · Expected Dec 2027</span>
+          <span class="meta">Edmond, OK</span>
         </div>
-        <div class="sub">Bachelor of Science in Computer Science (GPA: 3.66/4.0)</div>
-        <p class="detail"><strong>Relevant coursework:</strong> Software Engineering I, Advanced Data Structures &amp; Algorithms, Object-Oriented Programming, Operating Systems, Cybersecurity, Discrete Structures, Computer Organization &amp; Architecture II.</p>
-        <p class="detail"><strong>Anticipated coursework:</strong> Artificial Intelligence, Deep Learning, Machine Learning, Robotics.</p>
+        <div class="row">
+          <span class="sub">Bachelor of Science in Computer Science, GPA 3.66</span>
+          <span class="meta">Expected Dec 2027</span>
+        </div>
+        <p><strong>Relevant coursework:</strong> Advanced Data Structures and Algorithms, Operating Systems, Computer Organization and Architecture II (Assembly), Software Engineering I, Object-Oriented Programming, Cybersecurity, Linear Algebra, Discrete Structures</p>
+        <p><strong>Upcoming coursework:</strong> Artificial Intelligence, Machine Learning, Deep Learning</p>
       </div>
 
       <div class="entry">
         <div class="row">
           <span class="title">Oklahoma City Community College</span>
-          <span class="meta">Oklahoma City, OK · Jan 2024 – Dec 2025</span>
+          <span class="meta">Oklahoma City, OK</span>
         </div>
-        <div class="sub">Associate of Science in Computer Science (GPA: 3.8)</div>
+        <div class="row">
+          <span class="sub">Associate of Science in Computer Science, GPA 3.8</span>
+          <span class="meta">Jan 2024 to Dec 2025</span>
+        </div>
       </div>
 
-      <h2>Technical Skills</h2>
+      <h2>Technical skills</h2>
 
-      <dl class="skills">
-        <dt>Languages</dt><dd>Python, C++, Java, TypeScript, SQL, HTML/CSS</dd>
-        <dt>Frameworks &amp; Libraries</dt><dd>Next.js, React, Tailwind CSS, Vercel AI SDK</dd>
-        <dt>Applied AI</dt><dd>Retrieval-Augmented Generation (RAG), Vector Embeddings, Semantic Search, OpenAI API</dd>
-        <dt>Software Engineering</dt><dd>Object-Oriented Design, Data Structures &amp; Algorithms, Requirements Analysis, UML, Git/GitHub</dd>
+      <dl>
+        <dt>Languages</dt><dd>Python, C#, TypeScript, JavaScript, SQL, C++, Java</dd>
+        <dt>AI engineering</dt><dd>Retrieval-Augmented Generation (RAG), Embeddings, Semantic Search, Prompt Design and Grounding, LLM Streaming, OpenAI API</dd>
+        <dt>Backend and data</dt><dd>ASP.NET Core, Web API, RESTful APIs, Relational Database Design, SQLite</dd>
+        <dt>Frontend</dt><dd>React, Next.js, Tailwind CSS</dd>
+        <dt>Tools and platforms</dt><dd>Git, GitHub, Linux, Google Cloud, VS Code, UML</dd>
       </dl>
 
-      <h2>Technical Projects</h2>
+      <h2>Experience</h2>
 
       <div class="entry">
         <div class="row">
-          <span class="title">RAG-Powered AI Customer Service Chatbot</span>
-          <span class="meta"><a href="https://cosmo-mart-alpha.vercel.app/" target="_blank" rel="noopener noreferrer">live demo ↗</a> · <a href="https://github.com/jameshuynh-dev/cosmo-mart" target="_blank" rel="noopener noreferrer">code ↗</a></span>
+          <span class="title">Delivery Driver (Independent Contractor)</span>
+          <span class="meta">2025 to Present</span>
         </div>
-        <p class="tags">Next.js, TypeScript, Tailwind CSS, Vercel AI SDK, OpenAI API (GPT-4o-mini, text-embedding-3-small)</p>
-        <ul>
-          <li>Built a full-stack e-commerce storefront with an AI customer service agent that answers shopper questions about products, returns, payment methods, and store hours using retrieval-augmented generation (RAG).</li>
-          <li>Designed the retrieval pipeline: embedded a JSON knowledge base of 30 products and store policies with OpenAI text-embedding-3-small and wrote an in-memory cosine similarity search, skipping a vector database since the data is small and static.</li>
-          <li>Limited the model (GPT-4o-mini) to answering only from retrieved store data and having it say when information isn’t on file, instead of guessing.</li>
-          <li>Built the UI with Next.js and TypeScript, streamed responses with the Vercel AI SDK, and set up continuous deployment to Vercel from GitHub.</li>
-        </ul>
-      </div>
-
-      <h2>Work Experience</h2>
-
-      <div class="entry">
         <div class="row">
-          <span class="title">Delivery Driver <span class="sub">| DoorDash</span></span>
-          <span class="meta">2025 – Present</span>
+          <span class="sub">DoorDash</span>
+          <span class="meta">Oklahoma City, OK</span>
         </div>
         <ul>
-          <li>Completed 994 deliveries with a 5.0 customer rating while in school full-time.</li>
-          <li>Worked flexible hours around classes and handled order issues with customers and restaurants.</li>
+          <li>Completed 994 deliveries with a 5.0 customer rating while attending school full-time.</li>
+          <li>Resolved order issues with customers and restaurants in real time.</li>
         </ul>
       </div>
 
       <div class="entry">
         <div class="row">
-          <span class="title">Behavioral Technician <span class="sub">| Lakeland Behavioral Health Institute</span></span>
-          <span class="meta">May 2022 – Sep 2022</span>
+          <span class="title">Behavioral Technician</span>
+          <span class="meta">May 2022 to Sep 2022</span>
+        </div>
+        <div class="row">
+          <span class="sub">Lakeland Behavioral Health</span>
+          <span class="meta">Springfield, MO</span>
         </div>
         <ul>
-          <li>Maintained accurate, confidential patient documentation in line with facility protocols.</li>
-          <li>De-escalated crisis situations and stayed calm under pressure while coordinating with nurses, therapists, and staff.</li>
-          <li>Led daily group activities and supported patient care for a unit of 15–20 patients.</li>
+          <li>Maintained accurate, confidential patient records under strict facility protocols and privacy requirements.</li>
+          <li>De-escalated crisis situations and coordinated with nurses and therapists across a unit of 15 to 20 patients.</li>
+          <li>Led daily group activities for patients on the unit.</li>
         </ul>
       </div>
 
     </main>
-
-    <footer class="footer no-print">
-      <span class="hand">thanks for reading</span>
-      dearhuynh.com &middot; &copy; 2026 James Huynh
-    </footer>
-
   </div>
+
+  <footer class="colophon no-print">
+    <div class="container">
+      <p>James Huynh, Oklahoma City. This is dearhuynh.com, &copy; 2026.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
