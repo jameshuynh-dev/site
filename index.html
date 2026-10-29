@@ -17,24 +17,26 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dearhuynh.com" />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23202429'/%3E%3Ctext x='16' y='21.5' text-anchor='middle' font-family='system-ui,sans-serif' font-size='14' font-weight='600' fill='%23f2c14e'%3EJH%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='3' fill='%232b2119'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='15' fill='%23f2ede6'%3EJH%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://api.fontshare.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=sentient@300,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+  <canvas class="air-field" aria-hidden="true"></canvas>
 
-  <header class="mast">
-    <div class="container mast-row">
-      <nav class="mast-links" aria-label="Sections">
+  <header class="slab">
+    <div class="container slab-row">
+      <a class="wordmark" href="index.html" aria-label="James Huynh, home">James Huynh</a>
+      <nav class="slab-links" aria-label="Sections">
         <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#experience">Experience</a>
-      </nav>
-      <a class="wordmark" href="index.html">James Huynh</a>
-      <nav class="mast-links mast-links--end" aria-label="Contact">
         <a href="resume.html">Resume</a>
         <a href="#find-me">Contact</a>
       </nav>
@@ -43,131 +45,178 @@
 
   <main id="main">
 
-    <section class="hero" aria-labelledby="hero-head">
-      <div class="container hero-col">
-        <img class="avatar" src="img/me.jpg" alt="James Huynh" width="720" height="900" fetchpriority="high" />
-        <h1 id="hero-head">I build full-stack apps, start to finish.</h1>
-        <p class="lead">Computer science student at the University of Central Oklahoma, graduating December 2027.</p>
-        <div class="actions">
-          <a class="btn btn--primary" href="mailto:jameshuynh.dev@gmail.com">Email me</a>
-          <a class="btn" href="resume.pdf" download="James_Huynh_Resume.pdf">Download resume</a>
+    <section class="hero air" aria-labelledby="hero-head">
+      <div class="container cols hero-grid">
+        <div class="hero-text">
+          <h1 id="hero-head">I build full‑stack apps, start to finish.</h1>
+          <p class="lead">Computer science student at the University of Central Oklahoma, graduating December 2027.</p>
+          <div class="actions">
+            <a class="btn" href="mailto:jameshuynh.dev@gmail.com">Email me</a>
+            <a class="link" href="resume.pdf" download="James_Huynh_Resume.pdf">Download resume</a>
+          </div>
         </div>
+        <figure class="print">
+          <div class="mat stock">
+            <div class="print-frame" data-slot="hero" data-alt="A portrait of James, any setting, upright 4:5">
+              <img src="img/me.jpg" alt="James leaning against a pillar at night, looking at his phone" width="720" height="900" fetchpriority="high" />
+            </div>
+          </div>
+          <figcaption><span>Oklahoma City</span><span>at night</span></figcaption>
+        </figure>
       </div>
     </section>
 
-    <section id="about" class="section" aria-labelledby="about-head">
-      <div class="container">
-        <h2 id="about-head">About me</h2>
-        <div class="panels about">
-          <figure class="about-photo">
-            <img class="portrait" src="img/me.jpg" alt="James leaning against a pillar at night, looking at his phone" width="720" height="900" loading="lazy" />
-          </figure>
-          <div class="about-text">
-            <p class="lead">I’m most interested in software engineering and AI.</p>
-            <p>I enjoy building full-stack apps from start to finish, and learning how AI and machine learning can be applied to real business problems.</p>
+    <section id="about" class="section paper" aria-labelledby="about-head">
+      <div class="container cols">
+        <div class="about-text">
+          <h2 id="about-head">About me</h2>
+          <p class="statement">I’m most interested in software engineering and AI.</p>
+          <div class="prose">
+            <p class="dropcap">I enjoy building full-stack apps from start to finish, and learning how AI and machine learning can be applied to real business problems.</p>
             <p>I finished my associate’s at Oklahoma City Community College and I’m now working toward my B.S. at UCO.</p>
           </div>
-          <dl class="fact">
-            <dt>Based in</dt>
-            <dd>Oklahoma City, OK</dd>
-          </dl>
-          <dl class="fact">
-            <dt>Studying</dt>
-            <dd>B.S. Computer Science</dd>
-          </dl>
-          <dl class="fact">
-            <dt>Graduating</dt>
-            <dd class="measured">Dec 2027</dd>
+        </div>
+        <div class="facts stock">
+          <dl>
+            <div><dt>Based in</dt><dd>Oklahoma City, OK</dd></div>
+            <div><dt>Studying</dt><dd>B.S. Computer Science</dd></div>
+            <div><dt>Graduating</dt><dd>Dec 2027</dd></div>
           </dl>
         </div>
       </div>
     </section>
 
-    <section id="education" class="section band" aria-labelledby="edu-head">
-      <div class="container edu">
-        <div class="edu-reading">
+    <section id="education" class="section paper" aria-labelledby="edu-head">
+      <div class="container cols">
+        <div class="head-col">
           <h2 id="edu-head">Education</h2>
-          <p class="reading" aria-label="GPA 3.66 out of 4.0">3.66</p>
-          <p class="reading-note">GPA at UCO, out of 4.0</p>
         </div>
-        <ol class="trail">
+        <ol class="record">
           <li>
             <h3>University of Central Oklahoma</h3>
-            <p class="trail-meta"><span class="measured cool">Expected Dec 2027</span><span>Edmond, OK</span></p>
             <p>Bachelor of Science in Computer Science</p>
-            <p class="muted">Coursework: Advanced Data Structures and Algorithms, Operating Systems, Computer Organization and Architecture II (Assembly), Software Engineering I, Object-Oriented Programming, Cybersecurity, Linear Algebra, Discrete Structures.</p>
-            <p class="muted">Upcoming: Artificial Intelligence, Machine Learning, Deep Learning.</p>
+            <ul class="record-meta">
+              <li>Expected Dec 2027</li>
+              <li>Edmond, OK</li>
+              <li>GPA 3.66 out of 4.0</li>
+            </ul>
+            <p class="note">Coursework: Advanced Data Structures and Algorithms, Operating Systems, Computer Organization and Architecture II (Assembly), Software Engineering I, Object-Oriented Programming, Cybersecurity, Linear Algebra, Discrete Structures.</p>
+            <p class="note">Upcoming: Artificial Intelligence, Machine Learning, Deep Learning.</p>
           </li>
           <li>
             <h3>Oklahoma City Community College</h3>
-            <p class="trail-meta"><span class="measured cool">Jan 2024 to Dec 2025</span><span>Oklahoma City, OK</span></p>
-            <p>Associate of Science in Computer Science, GPA 3.8</p>
+            <p>Associate of Science in Computer Science</p>
+            <ul class="record-meta">
+              <li>Jan 2024 to Dec 2025</li>
+              <li>Oklahoma City, OK</li>
+              <li>GPA 3.8</li>
+            </ul>
           </li>
         </ol>
       </div>
     </section>
 
-    <section id="skills" class="section" aria-labelledby="skills-head">
-      <div class="container">
-        <h2 id="skills-head">Technical skills</h2>
-        <table class="skills">
-          <tbody>
-            <tr><th scope="row">Languages</th><td>Python, C#, TypeScript, JavaScript, SQL, C++, Java</td></tr>
-            <tr><th scope="row">AI engineering</th><td>Retrieval-augmented generation (RAG), embeddings, semantic search, prompt design and grounding, LLM streaming, OpenAI API</td></tr>
-            <tr><th scope="row">Backend and data</th><td>ASP.NET Core, Web API, RESTful APIs, relational database design, SQLite</td></tr>
-            <tr><th scope="row">Frontend</th><td>React, Next.js, Tailwind CSS</td></tr>
-            <tr><th scope="row">Tools and platforms</th><td>Git, GitHub, Linux, Google Cloud, VS Code, UML</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="experience" class="section" aria-labelledby="exp-head">
-      <div class="container">
-        <h2 id="exp-head">Work experience</h2>
-        <div class="panels jobs">
-          <article class="job">
-            <h3>Delivery Driver</h3>
-            <p class="trail-meta"><span class="measured cool">2025 to Present</span><span>DoorDash, Oklahoma City</span></p>
-            <div class="job-readings">
-              <p><span class="reading-s">994</span> deliveries</p>
-              <p><span class="reading-s">5.0</span> customer rating</p>
-            </div>
-            <p class="muted">Done while in school full-time, resolving order issues with customers and restaurants in real time.</p>
-          </article>
-          <article class="job">
-            <h3>Behavioral Technician</h3>
-            <p class="trail-meta"><span class="measured cool">May 2022 to Sep 2022</span><span>Lakeland Behavioral Health, Springfield, MO</span></p>
-            <ul class="muted">
-              <li>Maintained accurate, confidential patient records under strict facility protocols and privacy requirements.</li>
-              <li>De-escalated crisis situations and coordinated with nurses and therapists across a unit of 15 to 20 patients.</li>
-              <li>Led daily group activities.</li>
-            </ul>
-          </article>
+    <section id="skills" class="section paper" aria-labelledby="skills-head">
+      <div class="container cols">
+        <div class="skills-text">
+          <h2 id="skills-head">Technical skills</h2>
+          <div class="skill-panels">
+            <section class="skill-panel" id="sk-languages" role="tabpanel" aria-labelledby="st-languages">
+              <h3>Languages</h3>
+              <p>Python, C#, TypeScript, JavaScript, SQL, C++, Java</p>
+            </section>
+            <section class="skill-panel" id="sk-ai" role="tabpanel" aria-labelledby="st-ai">
+              <h3>AI engineering</h3>
+              <p>Retrieval-augmented generation (RAG), embeddings, semantic search, prompt design and grounding, LLM streaming, OpenAI API</p>
+            </section>
+            <section class="skill-panel" id="sk-backend" role="tabpanel" aria-labelledby="st-backend">
+              <h3>Backend and data</h3>
+              <p>ASP.NET Core, Web API, RESTful APIs, relational database design, SQLite</p>
+            </section>
+            <section class="skill-panel" id="sk-frontend" role="tabpanel" aria-labelledby="st-frontend">
+              <h3>Frontend</h3>
+              <p>React, Next.js, Tailwind CSS</p>
+            </section>
+            <section class="skill-panel" id="sk-tools" role="tabpanel" aria-labelledby="st-tools">
+              <h3>Tools and platforms</h3>
+              <p>Git, GitHub, Linux, Google Cloud, VS Code, UML</p>
+            </section>
+          </div>
+        </div>
+        <div class="strips" role="tablist" aria-label="Skill groups">
+          <button class="strip" type="button" role="tab" id="st-languages" aria-controls="sk-languages" aria-selected="true"><span class="strip-body"><span class="strip-name">Languages</span></span></button>
+          <button class="strip" type="button" role="tab" id="st-ai" aria-controls="sk-ai" aria-selected="false" tabindex="-1"><span class="strip-body"><span class="strip-name">AI engineering</span></span></button>
+          <button class="strip" type="button" role="tab" id="st-backend" aria-controls="sk-backend" aria-selected="false" tabindex="-1"><span class="strip-body"><span class="strip-name">Backend and data</span></span></button>
+          <button class="strip" type="button" role="tab" id="st-frontend" aria-controls="sk-frontend" aria-selected="false" tabindex="-1"><span class="strip-body"><span class="strip-name">Frontend</span></span></button>
+          <button class="strip" type="button" role="tab" id="st-tools" aria-controls="sk-tools" aria-selected="false" tabindex="-1"><span class="strip-body"><span class="strip-name">Tools and platforms</span></span></button>
         </div>
       </div>
     </section>
 
-    <section id="find-me" class="section close" aria-labelledby="contact-head">
-      <div class="container">
-        <h2 id="contact-head">Get in touch</h2>
-        <a class="email" href="mailto:jameshuynh.dev@gmail.com">jameshuynh.dev@gmail.com</a>
-        <ul class="links">
-          <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/james-huynh-ai/" target="_blank" rel="noopener noreferrer">linkedin.com/in/james-huynh-ai</a></li>
-          <li><span>GitHub</span><a href="https://github.com/jameshuynh-dev" target="_blank" rel="noopener noreferrer">github.com/jameshuynh-dev</a></li>
-          <li><span>Instagram</span><a href="https://www.instagram.com/dearhuynh/" target="_blank" rel="noopener noreferrer">@dearhuynh</a></li>
-          <li id="resume"><span>Resume</span><a href="resume.html">Read it here</a></li>
-        </ul>
+    <section id="experience" class="section band" aria-labelledby="exp-head">
+      <div class="container cols">
+        <div class="head-col">
+          <h2 id="exp-head">Work experience</h2>
+        </div>
+        <ol class="record record--lead">
+          <li>
+            <h3>Delivery Driver</h3>
+            <ul class="record-meta">
+              <li>2025 to Present</li>
+              <li>DoorDash, Oklahoma City</li>
+            </ul>
+            <div class="tally">
+              <p><b>994</b> deliveries</p>
+              <p><b>5.0</b> customer rating</p>
+            </div>
+            <p class="note">Done while in school full-time, resolving order issues with customers and restaurants in real time.</p>
+          </li>
+          <li>
+            <h3>Behavioral Technician</h3>
+            <ul class="record-meta">
+              <li>May 2022 to Sep 2022</li>
+              <li>Lakeland Behavioral Health, Springfield, MO</li>
+            </ul>
+            <ul class="note">
+              <li>Maintained accurate, confidential patient records under strict facility protocols and privacy requirements.</li>
+              <li>De-escalated crisis situations and coordinated with nurses and therapists across a unit of 15 to 20 patients.</li>
+              <li>Led daily group activities.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="find-me" class="section close air" aria-labelledby="contact-head">
+      <div class="container cols">
+        <div class="close-text">
+          <h2 id="contact-head">Get in touch</h2>
+          <a class="email" href="mailto:jameshuynh.dev@gmail.com">jameshuynh.dev@gmail.com</a>
+        </div>
+        <div class="contact-card stock">
+          <p class="card-name">James Huynh</p>
+          <ul class="links">
+            <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/james-huynh-ai/" target="_blank" rel="noopener noreferrer">linkedin.com/in/james-huynh-ai</a></li>
+            <li><span>GitHub</span><a href="https://github.com/jameshuynh-dev" target="_blank" rel="noopener noreferrer">github.com/jameshuynh-dev</a></li>
+            <li><span>Instagram</span><a href="https://www.instagram.com/dearhuynh/" target="_blank" rel="noopener noreferrer">@dearhuynh</a></li>
+            <li id="resume"><span>Resume</span><a href="resume.html">Read it here</a></li>
+          </ul>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="colophon">
+  <footer class="letter-close">
     <div class="container">
+      <p class="sign">James</p>
       <p>James Huynh, Oklahoma City. This is dearhuynh.com, &copy; 2026.</p>
+      <button class="link" type="button" data-air-toggle>Pause the background</button>
     </div>
   </footer>
 
+  <script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector(`[data-slot="${k}"]`); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
+document.querySelectorAll('[data-slot] img').forEach((i) => { if (i.complete && !i.naturalWidth) i.remove(); else i.addEventListener('error', () => i.remove(), { once: true }); });</script>
+  <script src="site.js" defer></script>
 </body>
 </html>
