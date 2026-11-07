@@ -1337,3 +1337,135 @@
   .dc-msg { gap: 10px; }
   .dc-avatar { width: 34px; height: 34px; }
 }
+
+/* ---------- resume ---------- */
+
+.resume-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+.resume-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.resume-actions button.btn { border: 0; cursor: pointer; }
+
+.paper-wrap {
+  position: relative;
+  max-width: 860px;
+  margin: 34px auto 0;
+}
+.tape {
+  position: absolute;
+  z-index: 2;
+  top: -14px;
+  width: 120px;
+  height: 30px;
+  opacity: 0.88;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 9px, rgba(45, 46, 61, 0.2) 9px 13px, transparent 13px 18px),
+    repeating-linear-gradient(0deg, transparent 0 9px, rgba(199, 161, 90, 0.45) 9px 11px, transparent 11px 16px),
+    var(--lilac);
+  clip-path: polygon(3% 0, 97% 4%, 100% 50%, 96% 100%, 2% 96%, 0 45%);
+  box-shadow: 0 2px 4px rgba(30, 24, 45, 0.15);
+}
+.tape-l { left: -24px; rotate: -32deg; top: 4px; }
+.tape-r { right: -24px; rotate: 30deg; top: 4px; background-color: var(--rose-soft); }
+
+/* laid out like the classic one-page latex template, in html */
+.sheet {
+  position: relative;
+  padding: clamp(26px, 5vw, 54px) clamp(20px, 5.5vw, 60px) clamp(30px, 5vw, 56px);
+  background: #fffefb;
+  color: #1d1b22;
+  border-radius: 6px;
+  font-family: "Fraunces", Georgia, serif;
+  font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 10;
+  font-size: 0.93rem;
+  line-height: 1.42;
+  box-shadow: 0 1px 2px rgba(30, 24, 45, 0.12), 0 24px 50px -24px rgba(30, 24, 45, 0.55);
+}
+.sheet a { text-decoration: none; }
+.sheet a:hover { text-decoration: underline; }
+.sheet-head { text-align: center; }
+.sheet-head h3 {
+  font-size: clamp(1.8rem, 3vw + 0.6rem, 2.4rem);
+  font-weight: 500;
+  font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 72;
+  font-variant: small-caps;
+  letter-spacing: 0.01em;
+}
+.sheet-contact {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px 0;
+  font-size: 0.86rem;
+}
+.sheet-contact > * + *::before {
+  content: "|";
+  margin-inline: 8px;
+  color: #6b6772;
+  text-decoration: none;
+  display: inline-block;
+}
+.sheet-contact a { text-decoration: underline; text-decoration-color: #c3bfc9; text-underline-offset: 2px; }
+
+.sheet section { margin-top: 16px; }
+.sheet h4 {
+  font-family: inherit;
+  font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 24;
+  font-size: 1.08rem;
+  font-weight: 500;
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #1d1b22;
+}
+.sheet .item { margin-top: 8px; }
+.sheet .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0 16px;
+}
+.sheet .row b { font-weight: 650; }
+.sheet .row.sub { font-size: 0.88rem; }
+.sheet .sep { margin-inline: 4px; color: #6b6772; }
+.sheet .note { margin-top: 3px; }
+.sheet .note b { font-weight: 650; }
+.sheet ul {
+  margin: 3px 0 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 2px;
+}
+.sheet li::marker { content: "•  "; font-size: 0.8em; }
+
+@media (max-width: 600px) {
+  .tape { width: 84px; height: 24px; }
+  .tape-l { left: -10px; }
+  .tape-r { right: -10px; }
+  .sheet .row { flex-direction: column; }
+  .sheet-contact { flex-direction: column; align-items: center; }
+  .sheet-contact > * + *::before { display: none; }
+  .sheet .row.sub i + i { font-size: 0.84rem; color: #4a4652; }
+}
+
+/* ---------- printing prints just the resume ---------- */
+
+@media print {
+  @page { margin: 0.45in; }
+  body { background: #fff; }
+  .sky, .grain, .trail, .ribbon, .charms, .crest, .pills, .hem, .view-head, .tape, .skip, .lightbox { display: none !important; }
+  .stage { padding: 0; }
+  .plush { box-shadow: none; background: none; max-width: none; }
+  .plush::before { display: none; }
+  .views { padding: 0; height: auto !important; }
+  .view { display: none !important; }
+  #resume { display: block !important; opacity: 1 !important; filter: none !important; transform: none !important; }
+  #resume [data-rise] { opacity: 1 !important; transform: none !important; filter: none !important; }
+  .paper-wrap { margin: 0; max-width: none; }
+  .sheet { box-shadow: none; padding: 0; font-size: 10.5pt; }
+}

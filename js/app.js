@@ -114,7 +114,12 @@
   addEventListener('resize', () => placeBead(pills.find((p) => p.hasAttribute('aria-current')), true));
 
   views.forEach((v) => { v.hidden = true; });
-  if (location.hash) { history.scrollRestoration = 'manual'; scrollTo(0, 0); }
+  // the views share ids with their hashes, so stop the browser jumping down to one on load
+  if (location.hash) {
+    history.scrollRestoration = 'manual';
+    scrollTo(0, 0);
+    addEventListener('load', () => requestAnimationFrame(() => scrollTo(0, 0)), { once: true });
+  }
   show(fromHash(), { instant: true });
   document.fonts?.ready.then(() => placeBead(pills.find((p) => p.hasAttribute('aria-current')), true));
 })();
@@ -323,3 +328,6 @@
 
   goLive(0);
 })();
+
+// the print stylesheet hides everything but the resume sheet
+document.querySelector('[data-print]')?.addEventListener('click', () => window.print());
