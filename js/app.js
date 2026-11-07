@@ -118,3 +118,73 @@
   show(fromHash(), { instant: true });
   document.fonts?.ready.then(() => placeBead(pills.find((p) => p.hasAttribute('aria-current')), true));
 })();
+
+// the planet charms: each one is a damped pendulum. a breeze keeps them alive,
+// the mouse can brush them, and a click gives them a proper swing
+(() => {
+  const charms = [...document.querySelectorAll('.charm')];
+  if (!charms.length || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const state = charms.map((el, i) => ({
+    el,
+    a: 0,
+    v: 0,
+    len: parseFloat(getComputedStyle(el).getPropertyValue('--len')) || 60,
+    phase: i * 1.7,
+  }));
+
+  let mx = -1e4, my = -1e4, mvx = 0;
+  addEventListener('pointermove', (e) => {
+    mvx = e.movementX || 0;
+    mx = e.clientX;
+    my = e.clientY;
+  }, { passive: true });
+
+  charms.forEach((el, i) => {
+    el.addEventListener('pointerdown', (e) => {
+      const r = el.getBoundingClientRect();
+      const side = e.clientX < r.left + r.width / 2 ? 1 : -1;
+      state[i].v += side * (5 + Math.random() * 3);
+    });
+  });
+
+  let last = performance.now();
+  let t = 0;
+  const tick = (now) => {
+    const dt = Math.min((now - last) / 1000, 0.04);
+    last = now;
+    t += dt;
+    for (const s of state) {
+      const g = 9.8 / (s.len / 30);
+      const breeze = Math.sin(t * 0.9 + s.phase) * 0.06 + Math.sin(t * 2.3 + s.phase * 2) * 0.025;
+      let push = 0;
+      const r = s.el.getBoundingClientRect();
+      const bx = r.left + r.width / 2;
+      const by = r.bottom - r.width / 2;
+      const d = Math.hypot(mx - bx, my - by);
+      if (d < r.width) push = mvx * 0.06 * (1 - d / r.width);
+      s.v += (-g * Math.sin(s.a) - s.v * 1.6 + breeze + push * 60 * dt) * dt * 6;
+      s.v = Math.max(-9, Math.min(9, s.v));
+      s.a += s.v * dt;
+      s.a = Math.max(-1.1, Math.min(1.1, s.a));
+      s.el.style.transform = `rotate(${s.a}rad)`;
+    }
+    mvx *= 0.6;
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+})();
+
+// the sticker leans toward the mouse a little
+(() => {
+  const el = document.querySelector('[data-tilt]');
+  if (!el || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  el.addEventListener('pointermove', (e) => {
+    const r = el.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    el.style.transform = `perspective(900px) rotateX(${(-y * 8).toFixed(2)}deg) rotateY(${(x * 10).toFixed(2)}deg) translateZ(0)`;
+  });
+  el.addEventListener('pointerleave', () => { el.style.transform = ''; });
+})();

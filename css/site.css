@@ -575,10 +575,12 @@
   .plush::before { inset: 7px; border-radius: 18px; }
   .ribbon { margin: 16px 16px 0; height: 40px; }
   .crest { padding-inline: 22px; }
+  .stage { padding-inline: 12px; }
   .monogram { width: 62px; height: 62px; font-size: 1.3rem; }
-  .pills { padding-inline: 22px; gap: 8px; }
-  .pill { padding: 10px 16px 10px 13px; gap: 7px; font-size: 0.95rem; }
-  .pill svg { width: 17px; height: 17px; }
+  .pills { padding-inline: 18px; gap: 8px; display: grid; grid-template-columns: repeat(3, 1fr); }
+  .pill { flex-direction: column; gap: 3px; padding: 10px 4px 9px; border-radius: 18px; font-size: 0.9rem; }
+  .pill-bead { border-radius: 18px; }
+  .pill svg { width: 19px; height: 19px; }
   .views { padding-inline: 22px; }
   .hem { padding-inline: 22px; }
   .stamp { left: -8px; }
@@ -684,7 +686,7 @@
 .has-bead .pill { z-index: 1; }
 .has-bead .pill[aria-current="page"] {
   background: transparent;
-  box-shadow: 0 0 0 1.5px var(--navy);
+  box-shadow: none;
 }
 .has-bead .pill[aria-current="page"]::after { border-color: transparent; }
 
@@ -695,4 +697,104 @@
   inset: 0;
   z-index: 60;
   pointer-events: none;
+}
+
+/* ---------- planet charms on gold chains ---------- */
+
+.charms {
+  position: absolute;
+  top: 62px;
+  right: clamp(28px, 5vw, 64px);
+  width: min(300px, 34%);
+  height: 160px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.charm {
+  position: absolute;
+  left: var(--x);
+  top: 0;
+  width: var(--size);
+  height: calc(var(--len) + var(--size));
+  transform-origin: 50% 0;
+  pointer-events: auto;
+  cursor: grab;
+  will-change: transform;
+}
+/* the chain: little gold links */
+.charm::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 3px;
+  height: calc(var(--len) + 4px);
+  translate: -50% 0;
+  border-radius: 2px;
+  background: repeating-linear-gradient(to bottom, var(--gold) 0 4px, var(--gold-deep) 4px 5px, transparent 5px 7px);
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.6));
+}
+/* the clasp where it hooks onto the ribbon */
+.charm::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -5px;
+  width: 9px;
+  height: 9px;
+  translate: -50% 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--gold-glow), var(--gold) 60%, var(--gold-deep));
+}
+
+.charm i {
+  --body: var(--amber);
+  --band: rgba(255, 255, 255, 0.35);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 38%),
+    repeating-linear-gradient(-25deg, transparent 0 18%, var(--band) 18% 26%, transparent 26% 40%),
+    radial-gradient(circle at 60% 65%, var(--body), color-mix(in srgb, var(--body) 60%, #4c4757));
+  box-shadow: 0 0 0 3px #fff, 0 0 0 4px rgba(45, 46, 61, 0.12), 0 8px 14px -6px rgba(30, 24, 45, 0.5);
+}
+.charm.amber i { --body: var(--amber); }
+.charm.sage i { --body: var(--sage); --band: rgba(240, 250, 245, 0.35); }
+.charm.rose i { --body: var(--rose); }
+.charm.dusk i { --body: var(--dusk); --band: rgba(230, 235, 255, 0.4); }
+.charm.gold i { --body: var(--gold-soft); }
+
+.charm.ringed i::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 170%;
+  height: 46%;
+  translate: -50% -50%;
+  rotate: -18deg;
+  border-radius: 50%;
+  border: 2.5px solid var(--gold-soft);
+  border-top-color: transparent;
+  box-shadow: 0 0 0 1.5px #fff;
+}
+
+.charm:active { cursor: grabbing; }
+
+@media (max-width: 820px) {
+  .charms { width: 42%; right: 22px; }
+  .charm:nth-child(4) { display: none; }
+}
+/* on phones the charms get their own little row under the ribbon */
+@media (max-width: 520px) {
+  .charms { top: 56px; left: 34px; right: 34px; width: auto; height: 64px; }
+  .charm { --size: 20px !important; --len: 16px !important; }
+  .charm:nth-child(2) { --len: 30px !important; }
+  .charm:nth-child(4) { display: block; --len: 22px !important; --size: 24px !important; }
+  .crest { padding-top: 74px; }
 }
