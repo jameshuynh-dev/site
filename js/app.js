@@ -188,3 +188,138 @@
   });
   el.addEventListener('pointerleave', () => { el.style.transform = ''; });
 })();
+
+// feeshtank screenshots: thumbnails swap the big frame, the big frame opens a lightbox
+(() => {
+  const gallery = document.querySelector('[data-gallery]');
+  if (!gallery) return;
+  const main = gallery.querySelector('.shot-main');
+  const mainImg = main.querySelector('img');
+  const thumbs = [...gallery.querySelectorAll('.shot-thumb')];
+  const box = document.querySelector('[data-lightbox]');
+
+  const markMissing = (img) => {
+    const hold = document.createElement('span');
+    hold.className = 'shot-missing';
+    hold.textContent = 'screenshot coming soon';
+    img.replaceWith(hold);
+  };
+  const watch = (img) => {
+    if (img.complete && !img.naturalWidth) markMissing(img);
+    else img.addEventListener('error', () => markMissing(img), { once: true });
+  };
+  gallery.querySelectorAll('img').forEach(watch);
+
+  thumbs.forEach((t) => {
+    t.addEventListener('click', () => {
+      const img = t.querySelector('img');
+      thumbs.forEach((o) => o.setAttribute('aria-pressed', o === t));
+      if (!img || !main.querySelector('img')) return;
+      main.classList.add('is-swapping');
+      setTimeout(() => {
+        const m = main.querySelector('img');
+        m.src = img.src;
+        m.alt = img.alt;
+        main.classList.remove('is-swapping');
+      }, 220);
+    });
+  });
+
+  main.addEventListener('click', () => {
+    const m = main.querySelector('img');
+    if (!m || !box || !box.showModal) return;
+    const big = box.querySelector('img');
+    big.src = m.src;
+    big.alt = m.alt;
+    box.showModal();
+  });
+  box?.querySelector('.lightbox-close').addEventListener('click', () => box.close());
+  box?.addEventListener('click', (e) => { if (e.target === box) box.close(); });
+})();
+
+// mimi's embed: swap members to see their colors, then end the stream to watch it update
+(() => {
+  const root = document.querySelector('[data-mimi]');
+  if (!root) return;
+  const $ = (k) => root.querySelector(`[data-${k}]`);
+  const endBtn = document.querySelector('[data-end]');
+  const picks = [...document.querySelectorAll('.chip.member')];
+
+  const members = [
+    { name: 'Mochi', color: '#e99aab', title: 'cozy farm day, come hang', game: 'Stardew Valley' },
+    { name: 'Kiri', color: '#7fb2e5', title: 'ranked grind, wish me luck', game: 'VALORANT' },
+    { name: 'Nova', color: '#b39ce3', title: 'drawing + chatting with chat', game: 'Art' },
+  ];
+
+  const clock = (d) => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+  const span = (ms) => {
+    const m = Math.floor(ms / 60000);
+    const h = Math.floor(m / 60);
+    return h ? `${h}h ${m % 60}m` : `${m}m`;
+  };
+
+  let who = 0;
+  let started = 0;
+  let ended = false;
+  let timer = 0;
+
+  const flash = (el) => { el.classList.remove('is-fresh'); el.offsetWidth; el.classList.add('is-fresh'); };
+
+  function tick() {
+    if (!ended) $('len').textContent = span(Date.now() - started);
+  }
+
+  function goLive(i) {
+    who = i;
+    const m = members[i];
+    ended = false;
+    // pretend they went live a couple of hours ago so the numbers look real
+    started = Date.now() - (95 + Math.random() * 120) * 60000;
+    root.classList.remove('is-ended');
+    root.style.setProperty('--accent', m.color);
+    $('author').textContent = `${m.name} is live on Twitch!`;
+    $('title').textContent = m.title;
+    $('game').textContent = m.game;
+    $('len-k').textContent = 'Live for';
+    $('foot').textContent = `Live since today at ${clock(new Date(started))}`;
+    $('sent').textContent = `Today at ${clock(new Date(started))}`;
+    root.querySelector('.dc-live').textContent = 'LIVE';
+    endBtn.textContent = 'End the stream';
+    tick();
+    clearInterval(timer);
+    timer = setInterval(tick, 15000);
+    picks.forEach((p, j) => p.setAttribute('aria-checked', j === i));
+  }
+
+  function end() {
+    const m = members[who];
+    ended = true;
+    clearInterval(timer);
+    const now = new Date();
+    root.classList.add('is-ended');
+    $('author').textContent = `${m.name} was live on Twitch`;
+    $('len-k').textContent = 'Streamed for';
+    $('len').textContent = span(now - started);
+    $('foot').textContent = `Ended today at ${clock(now)} · lasted ${span(now - started)}`;
+    root.querySelector('.dc-live').textContent = 'ENDED';
+    endBtn.textContent = 'Go live again';
+    [$('author'), $('len'), $('foot')].forEach(flash);
+  }
+
+  picks.forEach((p, i) => p.addEventListener('click', () => {
+    goLive(i);
+    flash($('embed'));
+  }));
+  endBtn.addEventListener('click', () => (ended ? goLive(who) : end()));
+
+  let toastTimer = 0;
+  $('twitch').addEventListener('click', () => {
+    const t = $('toast');
+    t.textContent = `in Discord this opens twitch.tv/${members[who].name.toLowerCase()}`;
+    t.classList.add('is-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('is-on'), 2600);
+  });
+
+  goLive(0);
+})();

@@ -141,8 +141,157 @@
         </section>
 
         <section class="view" id="projects" data-view-panel="projects" aria-label="Projects">
-          <p class="hand-note" data-rise>things I've made for real people</p>
-          <h2 data-rise>Projects</h2>
+          <header class="view-head">
+            <p class="hand-note" data-rise>things I've made for real people</p>
+            <h2 data-rise>Projects</h2>
+          </header>
+
+          <article class="project feature" data-rise aria-labelledby="feesh-title">
+            <div class="project-top">
+              <div>
+                <p class="kicker"><span class="dot"></span>Client project</p>
+                <h3 id="feesh-title">FeeshTank</h3>
+              </div>
+              <ul class="chips" aria-label="What I did">
+                <li>Requirements</li><li>Architecture</li><li>Security audits</li><li>Code review</li>
+              </ul>
+            </div>
+
+            <p class="project-lede">
+              An app I built with a client from a rough idea to a working product. I led the
+              technical side: figuring out what the client actually needed, choosing how it would
+              be built, and making sure what shipped was secure and reviewed.
+            </p>
+
+            <div class="gallery" data-gallery>
+              <button class="shot-main" type="button" aria-label="Open screenshot larger">
+                <img src="img/projects/feeshtank-1.png" alt="FeeshTank home screen" width="1280" height="800" />
+              </button>
+              <div class="shot-thumbs" role="list">
+                <button class="shot-thumb" type="button" role="listitem" aria-pressed="true"><img src="img/projects/feeshtank-1.png" alt="FeeshTank home screen" width="1280" height="800" loading="lazy" /></button>
+                <button class="shot-thumb" type="button" role="listitem" aria-pressed="false"><img src="img/projects/feeshtank-2.png" alt="FeeshTank screenshot 2" width="1280" height="800" loading="lazy" /></button>
+                <button class="shot-thumb" type="button" role="listitem" aria-pressed="false"><img src="img/projects/feeshtank-3.png" alt="FeeshTank screenshot 3" width="1280" height="800" loading="lazy" /></button>
+                <button class="shot-thumb" type="button" role="listitem" aria-pressed="false"><img src="img/projects/feeshtank-4.png" alt="FeeshTank screenshot 4" width="1280" height="800" loading="lazy" /></button>
+              </div>
+            </div>
+
+            <ol class="steps" aria-label="How it came together">
+              <li>
+                <h4>Requirements elicitation</h4>
+                <p>Sat down with the client to turn the idea into clear, testable requirements before any code.</p>
+              </li>
+              <li>
+                <h4>Choosing the architecture</h4>
+                <p>Weighed the options against those requirements and picked the stack and structure we built on.</p>
+              </li>
+              <li>
+                <h4>Designer + client</h4>
+                <p>Worked with a graphic designer and the client to bring the look to life without losing what it needed to do.</p>
+              </li>
+              <li>
+                <h4>Security audits + review</h4>
+                <p>Ran security audits and reviewed code so what shipped was something I'd stand behind.</p>
+              </li>
+            </ol>
+          </article>
+
+          <article class="project" data-rise aria-labelledby="mimi-title">
+            <div class="project-top">
+              <div>
+                <p class="kicker"><span class="dot"></span>Custom Discord bot · built for a client</p>
+                <h3 id="mimi-title">Mimi Bot</h3>
+              </div>
+              <ul class="chips" aria-label="Built with">
+                <li>Discord API</li><li>Twitch API</li>
+              </ul>
+            </div>
+
+            <div class="mimi">
+              <div class="mimi-text">
+                <h4 class="mini-head">The problem</h4>
+                <p>
+                  The client didn't want a public stream bot. They wanted their own private one, where
+                  <strong>they</strong> decide who's in the group and every member's go-live alert
+                  feels like theirs.
+                </p>
+                <h4 class="mini-head">What Mimi does</h4>
+                <ul class="star-list">
+                  <li>Private to the client's server, and they add their own members to it</li>
+                  <li>Every member gets their own embed color</li>
+                  <li>A <b>Watch on Twitch</b> button sends viewers from Discord straight to the stream</li>
+                  <li>When a stream ends, the alert updates itself with a timestamp of how long it lasted</li>
+                </ul>
+              </div>
+
+              <div class="mimi-demo">
+                <div class="demo-bar">
+                  <span class="demo-label">try it</span>
+                  <div class="member-picker" role="radiogroup" aria-label="Pick a member">
+                    <button class="chip member" type="button" role="radio" aria-checked="true" data-member="0" style="--c: #e99aab">Mochi</button>
+                    <button class="chip member" type="button" role="radio" aria-checked="false" data-member="1" style="--c: #7fb2e5">Kiri</button>
+                    <button class="chip member" type="button" role="radio" aria-checked="false" data-member="2" style="--c: #b39ce3">Nova</button>
+                  </div>
+                </div>
+
+                <div class="dc" data-mimi>
+                  <div class="dc-msg">
+                    <div class="dc-avatar" aria-hidden="true">✦</div>
+                    <div class="dc-body">
+                      <p class="dc-meta"><b class="dc-name">Mimi</b><span class="dc-app">APP</span><span class="dc-time" data-sent>Today at 6:30 PM</span></p>
+                      <div class="dc-embed" data-embed>
+                        <p class="dc-author"><span class="dc-pfp" data-pfp></span><span data-author>Mochi is live on Twitch!</span></p>
+                        <p class="dc-title" data-title>cozy farm day, come hang</p>
+                        <div class="dc-fields">
+                          <div><p class="dc-k">Playing</p><p class="dc-v" data-game>Stardew Valley</p></div>
+                          <div><p class="dc-k" data-len-k>Live for</p><p class="dc-v" data-len>0m</p></div>
+                        </div>
+                        <div class="dc-preview" data-preview aria-hidden="true"><span class="dc-live">LIVE</span></div>
+                        <p class="dc-foot" data-foot>Live since today at 6:30 PM</p>
+                      </div>
+                      <div class="dc-actions">
+                        <button class="dc-btn" type="button" data-twitch>
+                          Watch on Twitch
+                          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" /></svg>
+                        </button>
+                        <span class="dc-toast" data-toast role="status"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="btn btn-cloth demo-end" type="button" data-end>End the stream</button>
+              </div>
+            </div>
+          </article>
+
+          <div class="earlier" data-rise>
+            <h3 class="earlier-head">Earlier builds</h3>
+            <div class="earlier-grid">
+              <article class="mini-project">
+                <img src="img/projects/cosmo-mart.jpg" alt="Cosmo Mart storefront with its neon logo and product cards" width="1000" height="625" loading="lazy" />
+                <div>
+                  <h4>Cosmo Mart</h4>
+                  <p>A storefront with Gleb, an AI customer service agent that answers from the store's own policies and product specs using RAG, embeddings and cosine similarity, streamed in real time.</p>
+                  <p class="mini-stack">Next.js · TypeScript · OpenAI API · RAG</p>
+                  <a class="text-link" href="https://cosmo-mart-alpha.vercel.app/" target="_blank" rel="noopener noreferrer">Live demo ↗</a>
+                </div>
+              </article>
+              <article class="mini-project">
+                <img src="img/projects/hunt-log.jpg" alt="Hunt Log dashboard with status counts, a follow-up panel and an applications table" width="831" height="519" loading="lazy" />
+                <div>
+                  <h4>Hunt Log</h4>
+                  <p>The tracker I use for my own internship search: an ASP.NET Core REST API with EF Core and SQLite, and a React dashboard that shows who to follow up with today.</p>
+                  <p class="mini-stack">C# · ASP.NET Core · SQLite · React</p>
+                  <a class="text-link" href="https://github.com/jameshuynh-dev/hunt-log" target="_blank" rel="noopener noreferrer">Source ↗</a>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <dialog class="lightbox" data-lightbox aria-label="Screenshot">
+            <img alt="" />
+            <button class="lightbox-close" type="button" aria-label="Close">✕</button>
+          </dialog>
         </section>
 
         <section class="view" id="resume" data-view-panel="resume" aria-label="Resume">
