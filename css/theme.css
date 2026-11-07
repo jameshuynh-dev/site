@@ -1,0 +1,124 @@
+/* palette pulled from the starbound piece: dusk lavender sky, cream cloth,
+   cape navy, crown gold, and the little planets on their chains */
+:root {
+  --sky-deep: #4c4757;
+  --sky: #686274;
+  --sky-mid: #8a849a;
+  --sky-soft: #b5afc0;
+  --sky-glow: #ece6de;
+
+  --cream: #f5f0e6;
+  --cream-2: #ede6d8;
+  --cream-3: #e2d9c7;
+  --ivory: #fffcf5;
+
+  --navy: #2d2e3d;
+  --navy-2: #3d3e52;
+  --ink: #2f2c38;
+  --ink-soft: #5d5866;
+  --ink-faint: #8a8492;
+
+  --gold: #c7a15a;
+  --gold-soft: #e4cc94;
+  --gold-deep: #9c7a3c;
+  --gold-glow: #ffe8b0;
+
+  --lilac: #cbbfe0;
+  --lilac-soft: #e6def2;
+  --rose: #d9a7a6;
+  --rose-soft: #f2d9d6;
+  --sage: #9db3a8;
+  --amber: #d9b27e;
+  --dusk: #8e97b8;
+
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Nunito", ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+  --font-hand: "Gaegu", "Comic Neue", var(--font-body);
+
+  --radius-plush: 30px;
+  --radius-patch: 22px;
+  --radius-pill: 999px;
+
+  --stitch: 2px dashed color-mix(in srgb, var(--gold) 70%, transparent);
+  --stitch-soft: 1.5px dashed color-mix(in srgb, var(--ink-faint) 45%, transparent);
+
+  --shadow-plush:
+    inset 0 2px 0 rgba(255, 255, 255, 0.7),
+    inset 0 -6px 14px rgba(120, 100, 80, 0.08),
+    0 2px 3px rgba(40, 32, 50, 0.08),
+    0 18px 40px -12px rgba(40, 32, 55, 0.35),
+    0 60px 90px -40px rgba(30, 24, 45, 0.45);
+  --shadow-patch:
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -4px 10px rgba(120, 100, 80, 0.07),
+    0 1px 2px rgba(40, 32, 50, 0.08),
+    0 10px 22px -12px rgba(40, 32, 55, 0.3);
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-squish: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --gutter: clamp(16px, 4vw, 40px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  color-scheme: light;
+  -webkit-text-size-adjust: 100%;
+  scrollbar-color: var(--sky-soft) var(--sky-deep);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--sky);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-variation-settings: "SOFT" 100, "WONK" 0, "opsz" 72;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+p { margin: 0; text-wrap: pretty; }
+a { color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+svg { display: block; }
+button { font: inherit; color: inherit; }
+[hidden] { display: none !important; }
+
+::selection { background: var(--gold-soft); color: var(--navy); }
+
+:focus-visible {
+  outline: 2.5px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
