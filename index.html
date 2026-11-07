@@ -26,7 +26,15 @@
 <body>
   <a class="skip" href="#stage">Skip to content</a>
 
-  <div class="sky" aria-hidden="true"></div>
+  <div class="sky" aria-hidden="true">
+    <canvas class="sky-canvas"></canvas>
+    <div class="bokeh">
+      <span class="b1"><svg viewBox="0 0 100 100"><path d="M50 4l13 30 32 3-24 21 7 32-28-17-28 17 7-32L5 37l32-3z"/></svg></span>
+      <span class="b2"><svg viewBox="0 0 100 100"><path d="M50 4l13 30 32 3-24 21 7 32-28-17-28 17 7-32L5 37l32-3z"/></svg></span>
+      <span class="b3"><svg viewBox="0 0 100 100"><path d="M50 4l13 30 32 3-24 21 7 32-28-17-28 17 7-32L5 37l32-3z"/></svg></span>
+      <i class="b4"></i><i class="b5"></i><i class="b6"></i>
+    </div>
+  </div>
   <div class="grain" aria-hidden="true"></div>
 
   <div class="stage" id="stage">
@@ -140,5 +148,6 @@
     </div>
   </div>
 
+  <script src="js/sky.js" defer></script>
 </body>
 </html>
