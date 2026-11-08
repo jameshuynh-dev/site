@@ -971,3 +971,6 @@
 @media (max-width: 520px) {
   .pill, .pill::after, .pill-bead, .pill-bead::after { border-radius: 18px !important; }
 }
+
+.pill:not(:has(svg)) { padding-left: 22px; }
+@media (max-width: 520px) { .pill:not(:has(svg)) { padding-inline: 4px; } }
