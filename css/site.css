@@ -953,3 +953,21 @@
   .sheet-contact { font-size: 8.6pt; flex-wrap: nowrap; white-space: nowrap; }
   .sheet-contact > * + *::before { margin-inline: 5px; }
 }
+
+/* ---------- square corners everywhere, except the nav pills,
+   the social buttons and the resume download/print buttons ---------- */
+
+*, *::before, *::after { border-radius: 0 !important; }
+
+.pill, .pill::after, .pill-bead, .pill-bead::after { border-radius: var(--radius-pill) !important; }
+.round-face { border-radius: 20px !important; }
+.round-face::after { border-radius: 15px !important; }
+.resume-actions .btn { border-radius: 16px !important; }
+.resume-actions .btn::after { border-radius: 12px !important; }
+
+/* circles stay circles */
+.avatar img, .blink, .kicker .dot, .steps li::before, .lightbox-close { border-radius: 50% !important; }
+
+@media (max-width: 520px) {
+  .pill, .pill::after, .pill-bead, .pill-bead::after { border-radius: 18px !important; }
+}
