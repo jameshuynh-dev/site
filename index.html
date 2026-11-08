@@ -19,8 +19,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/theme.css?v=20261108d" />
-  <link rel="stylesheet" href="css/site.css?v=20261108d" />
+  <link rel="stylesheet" href="css/theme.css?v=20261108g" />
+  <link rel="stylesheet" href="css/site.css?v=20261108g" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -244,54 +244,49 @@
 
               <section>
                 <h4>Education</h4>
-                <div class="item">
-                  <p class="row"><b>University of Central Oklahoma</b><span>Edmond, OK</span></p>
-                  <p class="row sub"><i>Bachelor of Science in Computer Science</i><i>Expected Dec. 2027</i></p>
-                </div>
-                <div class="item">
-                  <p class="row"><b>Oklahoma City Community College</b><span>Oklahoma City, OK</span></p>
-                  <p class="row sub"><i>Associate of Science in Computer Science</i><i>2024 – 2025</i></p>
-                </div>
-                <p class="note"><b>Relevant Coursework:</b> Linear Algebra, Discrete Mathematics, Software Engineering, Computer Organization &amp; Architecture, Digital Logic, C++ Programming</p>
+                <p class="row"><span><b>University of Central Oklahoma</b> <span class="sep">|</span> Bachelor of Science in Computer Science</span><span>Edmond, OK <span class="sep">|</span> Expected Dec. 2027</span></p>
+                <p class="row"><span><b>Oklahoma City Community College</b> <span class="sep">|</span> Associate of Science in Computer Science</span><span>Oklahoma City, OK <span class="sep">|</span> 2024 – 2025</span></p>
+                <p class="note"><b>Relevant Coursework:</b> Linear Algebra, Discrete Mathematics, Software Engineering, Computer Organization &amp; Architecture II, Digital Logic, C++ Programming, Cybersecurity, Statistics, Software Development</p>
               </section>
 
               <section>
                 <h4>Projects</h4>
                 <div class="item">
-                  <p class="row"><span><b>FeeshTank — Twitch Donation App</b> <span class="sep">|</span> <i>TypeScript, React, Fastify, PostgreSQL, Stripe, Twitch API</i></span></p>
+                  <p class="row"><span><b>FeeshTank</b> <span class="sep">|</span> <i>Twitch Donation App (Client Project)</i></span><span>2026</span></p>
+                  <p class="note"><b>Tech Stack:</b> TypeScript, React, Node.js, Docker, Railway</p>
                   <ul>
-                    <li>Built a Twitch donation app for a client where viewers draw a crayon fish that swims across the stream through an OBS overlay once the streamer approves it.</li>
-                    <li>Led requirements elicitation with the client, turning an early idea into a defined feature set, including donation tiers and hold-until-approved payments.</li>
-                    <li>Chose the architecture: a React and Vite front end, a Fastify API with PostgreSQL and Drizzle ORM, WebSockets for the live overlay, and Docker on Railway.</li>
-                    <li>Collaborated with a graphic designer and the client to bring the visual design into the finished product.</li>
-                    <li>Ran security audits and reviewed code throughout development to keep the codebase secure and maintainable.</li>
+                    <li>Built a Twitch donation app where viewers draw a fish that swims across the stream through an OBS overlay once approved by the streamer.</li>
+                    <li>Led requirements elicitation with the client, defining core feature sets including donation tiers and hold-until-approved payment processing.</li>
+                    <li>Architected application structure and designed user interfaces in collaboration with a graphic designer and the client.</li>
+                    <li>Executed security audits and code reviews throughout development to ensure code quality and maintainability.</li>
                   </ul>
                 </div>
                 <div class="item">
-                  <p class="row"><span><b>Mimi — Discord Stream Alert Bot</b> <span class="sep">|</span> <i>Python, discord.py, Twitch API, Google Cloud</i></span><span>2026</span></p>
+                  <p class="row"><span><b>Custom Alerts Discord Bot</b> <span class="sep">|</span> <i>Client Project</i></span><span>2026</span></p>
+                  <p class="note"><b>Tech Stack:</b> Python, Discord API, Twitch API</p>
                   <ul>
-                    <li>Gathered requirements from a VTuber community's organizers and built a private bot that posts rich-embed alerts to Discord when members go live on Twitch.</li>
-                    <li>Let organizers add their own members, each with a custom embed color and a button that takes viewers from Discord straight to the stream.</li>
-                    <li>Automatically updates each alert when a stream ends with the final title, category, and stream duration.</li>
-                    <li>Deployed on a Google Cloud VM running 24/7 as the community's live-notification system.</li>
+                    <li>Gathered requirements from a streamer group community's organizer and built a private bot posting reactive embed alerts when members go live on Twitch.</li>
+                    <li>Enabled custom organizer configurations for member profiles, including tailored embed colors and direct stream redirection buttons.</li>
+                    <li>Automated stream status tracking to update alerts upon stream conclusion with final title, category, and total duration.</li>
+                    <li>Deployed and maintained the bot on a 24/7 cloud instance serving active community notifications.</li>
                   </ul>
-                </div>
-              </section>
-
-              <section>
-                <h4>Experience</h4>
-                <div class="item">
-                  <p class="row"><b>DoorDash</b><span>2024 – Present</span></p>
-                  <p class="row sub"><i>Part-time job during studies</i><i>Oklahoma City, OK</i></p>
                 </div>
               </section>
 
               <section>
                 <h4>Technical Skills</h4>
-                <p class="note"><b>Languages:</b> Python, TypeScript, Java, C++, HTML, CSS</p>
-                <p class="note"><b>Databases:</b> PostgreSQL</p>
-                <p class="note"><b>Frameworks:</b> React, Tailwind CSS</p>
-                <p class="note"><b>Developer Tools:</b> Git, GitHub</p>
+                <p class="note"><b>Languages:</b> Python, Java, C++, TypeScript, HTML, CSS</p>
+                <p class="note"><b>Frameworks &amp; Libraries:</b> React, Node.js, Tailwind CSS</p>
+                <p class="note"><b>Databases:</b> SQL</p>
+                <p class="note"><b>Tools &amp; Infrastructure:</b> Git, GitHub, Docker, Railway</p>
+              </section>
+
+              <section>
+                <h4>Experience</h4>
+                <div class="item">
+                  <p class="row"><b>DoorDash Delivery Driver</b><span>Oklahoma City, OK <span class="sep">|</span> 2024 – Present</span></p>
+                  <p class="row sub"><i>Part-time job during studies</i></p>
+                </div>
               </section>
             </article>
           </div>
@@ -311,8 +306,8 @@
     </div>
   </div>
 
-  <script src="js/sky.js?v=20261108d" defer></script>
-  <script src="js/app.js?v=20261108d" defer></script>
-  <script src="js/trail.js?v=20261108d" defer></script>
+  <script src="js/sky.js?v=20261108g" defer></script>
+  <script src="js/app.js?v=20261108g" defer></script>
+  <script src="js/trail.js?v=20261108g" defer></script>
 </body>
 </html>
