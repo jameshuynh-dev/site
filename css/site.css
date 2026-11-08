@@ -48,8 +48,6 @@
   margin-inline: auto;
   border-radius: var(--radius-plush);
   background:
-    repeating-linear-gradient(0deg, rgba(150, 125, 95, 0.035) 0 1px, transparent 1px 3px),
-    repeating-linear-gradient(90deg, rgba(150, 125, 95, 0.035) 0 1px, transparent 1px 3px),
     radial-gradient(130% 80% at 50% 0%, var(--ivory), var(--cream) 55%, var(--cream-2));
   box-shadow: var(--shadow-plush);
   padding-bottom: 8px;
