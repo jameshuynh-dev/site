@@ -133,14 +133,6 @@
   transition: transform 0.35s var(--ease-squish), box-shadow 0.3s ease, color 0.3s ease, background 0.3s ease;
   -webkit-tap-highlight-color: transparent;
 }
-.pill::after {
-  content: "";
-  position: absolute;
-  inset: 4px;
-  border-radius: inherit;
-  border: var(--stitch-soft);
-  pointer-events: none;
-}
 .pill svg {
   width: 20px;
   height: 20px;
@@ -157,10 +149,6 @@
   background: linear-gradient(var(--navy-2), var(--navy));
   color: var(--gold-soft);
   box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.12), 0 10px 22px -10px rgba(30, 24, 45, 0.7), 0 0 0 1.5px var(--navy);
-}
-.pill[aria-current="page"]::after {
-  border-color: color-mix(in srgb, var(--gold) 75%, transparent);
-  border-style: dashed;
 }
 
 /* ---------- views ---------- */
@@ -419,7 +407,7 @@
   .stage { padding-inline: 12px; }
   .avatar { width: 78px; }
   .pills { padding-inline: 18px; gap: 8px; display: grid; grid-template-columns: repeat(3, 1fr); }
-  .pill { flex-direction: column; gap: 3px; padding: 10px 4px 9px; border-radius: 18px; font-size: 0.9rem; }
+  .pill { flex-direction: column; justify-content: center; gap: 3px; padding: 10px 4px 9px; border-radius: 18px; font-size: 0.9rem; }
   .pill-bead { border-radius: 18px; }
   .pill svg { width: 19px; height: 19px; }
   .views { padding-inline: 22px; }
@@ -514,19 +502,11 @@
   transition: transform 0.55s var(--ease-squish), width 0.45s var(--ease-soft);
   pointer-events: none;
 }
-.pill-bead::after {
-  content: "";
-  position: absolute;
-  inset: 4px;
-  border-radius: inherit;
-  border: 1.5px dashed color-mix(in srgb, var(--gold) 75%, transparent);
-}
 .has-bead .pill { z-index: 1; }
 .has-bead .pill[aria-current="page"] {
   background: transparent;
   box-shadow: none;
 }
-.has-bead .pill[aria-current="page"]::after { border-color: transparent; }
 
 /* ---------- cursor trail ---------- */
 
@@ -959,7 +939,7 @@
 
 *, *::before, *::after { border-radius: 0 !important; }
 
-.pill, .pill::after, .pill-bead, .pill-bead::after { border-radius: var(--radius-pill) !important; }
+.pill, .pill-bead { border-radius: var(--radius-pill) !important; }
 .round-face { border-radius: 20px !important; }
 .round-face::after { border-radius: 15px !important; }
 .resume-actions .btn { border-radius: 16px !important; }
@@ -969,7 +949,7 @@
 .avatar img, .blink, .kicker .dot, .steps li::before, .lightbox-close { border-radius: 50% !important; }
 
 @media (max-width: 520px) {
-  .pill, .pill::after, .pill-bead, .pill-bead::after { border-radius: 18px !important; }
+  .pill, .pill-bead { border-radius: 18px !important; }
 }
 
 .pill:not(:has(svg)) { padding-left: 22px; }
