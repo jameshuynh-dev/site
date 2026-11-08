@@ -30,9 +30,8 @@
   --amber: #d9b27e;
   --dusk: #8e97b8;
 
-  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-display: "Source Serif 4", "Iowan Old Style", Georgia, serif;
   --font-body: "Nunito", ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
-  --font-hand: "Gaegu", "Comic Neue", var(--font-body);
 
   --radius-plush: 30px;
   --radius-patch: 22px;
@@ -83,8 +82,7 @@ body {
 h1, h2, h3, h4 {
   margin: 0;
   font-family: var(--font-display);
-  font-weight: 500;
-  font-variation-settings: "SOFT" 100, "WONK" 0, "opsz" 72;
+  font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.015em;
   text-wrap: balance;
