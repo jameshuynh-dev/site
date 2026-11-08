@@ -19,8 +19,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/theme.css?v=20261108g" />
-  <link rel="stylesheet" href="css/site.css?v=20261108g" />
+  <link rel="stylesheet" href="css/theme.css?v=20261108j" />
+  <link rel="stylesheet" href="css/site.css?v=20261108j" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -244,31 +244,39 @@
 
               <section>
                 <h4>Education</h4>
-                <p class="row"><span><b>University of Central Oklahoma</b> <span class="sep">|</span> Bachelor of Science in Computer Science</span><span>Edmond, OK <span class="sep">|</span> Expected Dec. 2027</span></p>
-                <p class="row"><span><b>Oklahoma City Community College</b> <span class="sep">|</span> Associate of Science in Computer Science</span><span>Oklahoma City, OK <span class="sep">|</span> 2024 – 2025</span></p>
+                <div class="item">
+                  <p class="row"><b>University of Central Oklahoma</b><span>Edmond, OK</span></p>
+                  <p class="row sub"><i>Bachelor of Science in Computer Science, GPA: 3.66</i><i>Expected Dec. 2027</i></p>
+                </div>
+                <div class="item">
+                  <p class="row"><b>Oklahoma City Community College</b><span>Oklahoma City, OK</span></p>
+                  <p class="row sub"><i>Associate of Science in Computer Science</i><i>2024 – 2025</i></p>
+                </div>
                 <p class="note"><b>Relevant Coursework:</b> Linear Algebra, Discrete Mathematics, Software Engineering, Computer Organization &amp; Architecture II, Digital Logic, C++ Programming, Cybersecurity, Statistics, Software Development</p>
+                <p class="note"><b>Upcoming Coursework:</b> Artificial Intelligence, Machine Learning, Deep Learning</p>
               </section>
 
               <section>
                 <h4>Projects</h4>
                 <div class="item">
                   <p class="row"><span><b>FeeshTank</b> <span class="sep">|</span> <i>Twitch Donation App (Client Project)</i></span><span>2026</span></p>
-                  <p class="note"><b>Tech Stack:</b> TypeScript, React, Node.js, Docker, Railway</p>
+                  <p class="note"><b>Tech Stack:</b> TypeScript, React, Node.js (Fastify), PostgreSQL, Stripe, WebSockets, Docker, Railway</p>
                   <ul>
                     <li>Built a Twitch donation app where viewers draw a fish that swims across the stream through an OBS overlay once approved by the streamer.</li>
                     <li>Led requirements elicitation with the client, defining core feature sets including donation tiers and hold-until-approved payment processing.</li>
                     <li>Architected application structure and designed user interfaces in collaboration with a graphic designer and the client.</li>
                     <li>Executed security audits and code reviews throughout development to ensure code quality and maintainability.</li>
+                    <li>Wrote unit and end-to-end tests with Vitest and Playwright covering webhooks, tank logic, and the full donation flow.</li>
                   </ul>
                 </div>
                 <div class="item">
                   <p class="row"><span><b>Custom Alerts Discord Bot</b> <span class="sep">|</span> <i>Client Project</i></span><span>2026</span></p>
-                  <p class="note"><b>Tech Stack:</b> Python, Discord API, Twitch API</p>
+                  <p class="note"><b>Tech Stack:</b> Python, discord.py, Twitch API, Google Cloud</p>
                   <ul>
-                    <li>Gathered requirements from a streamer group community's organizer and built a private bot posting reactive embed alerts when members go live on Twitch.</li>
+                    <li>Gathered requirements from a streaming community's organizer and built a private bot posting live embed alerts when members go live on Twitch.</li>
                     <li>Enabled custom organizer configurations for member profiles, including tailored embed colors and direct stream redirection buttons.</li>
                     <li>Automated stream status tracking to update alerts upon stream conclusion with final title, category, and total duration.</li>
-                    <li>Deployed and maintained the bot on a 24/7 cloud instance serving active community notifications.</li>
+                    <li>Deployed and maintained the bot on a Google Cloud VM running 24/7 for the community's live notifications.</li>
                   </ul>
                 </div>
               </section>
@@ -277,8 +285,8 @@
                 <h4>Technical Skills</h4>
                 <p class="note"><b>Languages:</b> Python, Java, C++, TypeScript, HTML, CSS</p>
                 <p class="note"><b>Frameworks &amp; Libraries:</b> React, Node.js, Tailwind CSS</p>
-                <p class="note"><b>Databases:</b> SQL</p>
-                <p class="note"><b>Tools &amp; Infrastructure:</b> Git, GitHub, Docker, Railway</p>
+                <p class="note"><b>Databases:</b> PostgreSQL</p>
+                <p class="note"><b>Tools &amp; Infrastructure:</b> Git, GitHub, Docker, Railway, Google Cloud, OpenSpec</p>
               </section>
 
               <section>
@@ -306,8 +314,8 @@
     </div>
   </div>
 
-  <script src="js/sky.js?v=20261108g" defer></script>
-  <script src="js/app.js?v=20261108g" defer></script>
-  <script src="js/trail.js?v=20261108g" defer></script>
+  <script src="js/sky.js?v=20261108j" defer></script>
+  <script src="js/app.js?v=20261108j" defer></script>
+  <script src="js/trail.js?v=20261108j" defer></script>
 </body>
 </html>
