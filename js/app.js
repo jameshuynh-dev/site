@@ -115,10 +115,15 @@
 
   views.forEach((v) => { v.hidden = true; });
   // the views share ids with their hashes, so stop the browser jumping down to one on load
+  // a shared link like /#projects skips the phone title screen and opens on the card
+  const landing = () => {
+    const intro = document.querySelector('.sky-intro');
+    return intro && intro.offsetHeight ? intro.offsetHeight : 0;
+  };
   if (location.hash) {
     history.scrollRestoration = 'manual';
-    scrollTo(0, 0);
-    addEventListener('load', () => requestAnimationFrame(() => scrollTo(0, 0)), { once: true });
+    scrollTo(0, landing());
+    addEventListener('load', () => requestAnimationFrame(() => scrollTo(0, landing())), { once: true });
   }
   show(fromHash(), { instant: true });
   document.fonts?.ready.then(() => placeBead(pills.find((p) => p.hasAttribute('aria-current')), true));
@@ -175,3 +180,27 @@ document.querySelectorAll('[data-gallery]').forEach((gallery) => {
 
 // the print stylesheet hides everything but the resume sheet
 document.querySelector('[data-print]')?.addEventListener('click', () => window.print());
+
+// phone title screen: the name drifts up and fades as the card scrolls in
+(() => {
+  const intro = document.querySelector('.sky-intro');
+  if (!intro) return;
+  document.querySelector('[data-to-card]')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    scrollTo({ top: intro.offsetHeight, behavior: 'smooth' });
+  });
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const h = intro.offsetHeight;
+    if (!h) return;
+    const k = Math.min(1, Math.max(0, scrollY / (h * 0.7)));
+    intro.style.opacity = String(1 - k);
+    intro.style.transform = `translateY(${(scrollY * 0.35).toFixed(1)}px)`;
+  };
+  addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  update();
+})();
