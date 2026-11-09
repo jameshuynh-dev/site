@@ -402,7 +402,8 @@
   .plush { border-radius: 24px; }
   .plush::before { inset: 7px; border-radius: 18px; }
   .crest { padding-inline: 22px; }
-  .stage { padding-inline: 12px; }
+  /* on phones the sky gets its own space: open on the stars, wider margins, room below */
+  .stage { padding: 34vh 20px 26vh; padding: 34svh 20px 26svh; }
   .avatar { width: 78px; }
   .pills { padding-inline: 18px; gap: 8px; display: grid; grid-template-columns: repeat(3, 1fr); }
   .pill { flex-direction: column; justify-content: center; gap: 3px; padding: 10px 4px 9px; border-radius: 18px; font-size: 0.9rem; }
