@@ -53,15 +53,6 @@
   padding-bottom: 8px;
 }
 
-/* the quilted seam that runs around the whole card */
-.plush::before {
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border-radius: calc(var(--radius-plush) - 10px);
-  border: var(--stitch);
-  pointer-events: none;
-}
 
 /* ---------- crest ---------- */
 
@@ -400,7 +391,6 @@
 
 @media (max-width: 520px) {
   .plush { border-radius: 24px; }
-  .plush::before { inset: 7px; border-radius: 18px; }
   .crest { padding-inline: 22px; }
   /* on phones the first screen is all sky; the card follows with room below */
   .stage { padding: 0 20px 26vh; padding: 0 20px 26svh; }
@@ -919,7 +909,6 @@
   .sky, .grain, .trail, .crest, .pills, .hem, .view-head, .skip, .lightbox { display: none !important; }
   .stage { padding: 0; }
   .plush { box-shadow: none; background: none; max-width: none; }
-  .plush::before { display: none; }
   .views { padding: 0; height: auto !important; }
   .view { display: none !important; }
   #resume { display: block !important; opacity: 1 !important; filter: none !important; transform: none !important; }
