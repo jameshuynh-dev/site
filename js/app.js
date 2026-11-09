@@ -120,11 +120,17 @@
     const intro = document.querySelector('.sky-intro');
     return intro && intro.offsetHeight ? intro.offsetHeight : 0;
   };
-  if (location.hash) {
-    history.scrollRestoration = 'manual';
-    scrollTo(0, landing());
-    addEventListener('load', () => requestAnimationFrame(() => scrollTo(0, landing())), { once: true });
-  }
+  // the browser never restores an old scroll position: every visit and every refresh
+  // starts fresh. a refresh goes back to the very top on Home, like opening the site
+  history.scrollRestoration = 'manual';
+  const navEntry = performance.getEntriesByType?.('navigation')[0];
+  const reloaded = navEntry ? navEntry.type === 'reload' : performance.navigation?.type === 1;
+  if (reloaded && location.hash) history.replaceState(null, '', location.pathname + location.search);
+  const startAt = () => (location.hash ? landing() : 0);
+  scrollTo(0, startAt());
+  addEventListener('load', () => requestAnimationFrame(() => scrollTo(0, startAt())), { once: true });
+  // phones can put the page back from their back/forward cache; treat that as a fresh open too
+  addEventListener('pageshow', (e) => { if (e.persisted) scrollTo(0, startAt()); });
   show(fromHash(), { instant: true });
   document.fonts?.ready.then(() => placeBead(pills.find((p) => p.hasAttribute('aria-current')), true));
 })();
