@@ -37,8 +37,8 @@
   }
 
   function seed() {
-    const count = Math.round((w * h) / (small.matches ? 5200 : 3600));
-    const reach = Math.hypot(w, h);
+    const count = Math.round((w * layoutH) / (small.matches ? 5200 : 3600));
+    const reach = Math.hypot(w, layoutH);
     stars = Array.from({ length: count }, () => ({
       r: Math.sqrt(Math.random()) * reach,
       a: rand(0, Math.PI * 2),
@@ -55,6 +55,12 @@
     }));
   }
 
+  // Phone browsers resize the page every time the address bar slides in or out while
+  // you scroll. Only a real width change (rotating, resizing a desktop window) re-lays
+  // the sky; height changes just stretch the canvas, so stars and rings stay put.
+  let laidOutWidth = 0;
+  let layoutH = 0;
+
   function resize() {
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     w = innerWidth;
@@ -63,11 +69,18 @@
     canvas.height = Math.round(h * dpr);
     canvas.style.width = w + 'px';
     canvas.style.height = h + 'px';
-    // on phones the card starts lower, so center the rings in the open sky above it
-    cx = w * (small.matches ? 0.5 : 0.14);
-    cy = h * (small.matches ? 0.17 : 0.44);
+
+    const widthChanged = w !== laidOutWidth;
+    if (widthChanged) {
+      laidOutWidth = w;
+      // plan for the tallest the viewport gets, so stars already cover it when the bar hides
+      layoutH = Math.max(h, small.matches ? (window.screen?.height || h) : h);
+      // on phones the card starts lower, so center the rings in the open sky above it
+      cx = w * (small.matches ? 0.5 : 0.14);
+      cy = layoutH * (small.matches ? 0.17 : 0.44);
+      seed();
+    }
     drawRings();
-    seed();
   }
 
   function sparkle(x, y, s, alpha) {
@@ -124,7 +137,7 @@
     for (const sp of sparkles) {
       sp.phase += dt * sp.speed;
       const pulse = 0.55 + 0.45 * Math.sin(sp.phase);
-      sparkle(sp.x * w + ox * 1.6, sp.y * h + oy * 1.6, sp.size * (0.8 + pulse * 0.25), 0.35 + pulse * 0.6);
+      sparkle(sp.x * w + ox * 1.6, sp.y * layoutH + oy * 1.6, sp.size * (0.8 + pulse * 0.25), 0.35 + pulse * 0.6);
     }
 
     if (now > nextShot) {
