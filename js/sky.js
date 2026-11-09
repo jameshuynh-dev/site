@@ -63,8 +63,9 @@
     canvas.height = Math.round(h * dpr);
     canvas.style.width = w + 'px';
     canvas.style.height = h + 'px';
-    cx = w * (small.matches ? 0.05 : 0.14);
-    cy = h * 0.44;
+    // on phones the card starts lower, so center the rings in the open sky above it
+    cx = w * (small.matches ? 0.5 : 0.14);
+    cy = h * (small.matches ? 0.17 : 0.44);
     drawRings();
     seed();
   }
