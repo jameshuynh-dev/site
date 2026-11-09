@@ -39,7 +39,7 @@
 .stage {
   position: relative;
   z-index: 2;
-  padding: clamp(28px, 6vh, 72px) var(--gutter) clamp(40px, 8vh, 96px);
+  padding: 0 var(--gutter) clamp(40px, 8vh, 96px);
 }
 
 .plush {
@@ -954,71 +954,81 @@
 .pill:not(:has(svg)) { padding-left: 22px; }
 @media (max-width: 520px) { .pill:not(:has(svg)) { padding-inline: 4px; } }
 
-/* ---------- phone title screen: just the sky and a name ---------- */
+/* ---------- title screen: the sky and a name, before the card ---------- */
 
-.sky-intro { display: none; }
-
+.sky-intro {
+  position: relative;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  height: 100vh;
+  height: 100svh;
+  margin-inline: calc(-1 * var(--gutter));
+  padding: 0 24px 6vh;
+  text-align: center;
+  color: #fffaf0;
+  will-change: opacity, transform;
+}
+.sky-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.6rem, 6vw + 1rem, 5.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  text-shadow: 0 2px 28px rgba(30, 24, 45, 0.55), 0 0 2px rgba(30, 24, 45, 0.3);
+  animation: sky-rise 1.2s var(--ease-soft) both;
+}
+.sky-tag {
+  margin: 14px 0 0;
+  font-size: clamp(0.82rem, 0.3vw + 0.75rem, 1rem);
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 250, 240, 0.88);
+  text-shadow: 0 1px 12px rgba(30, 24, 45, 0.6);
+  animation: sky-rise 1.2s var(--ease-soft) 0.15s both;
+}
+.sky-tag i { font-style: normal; color: var(--gold-soft); margin-inline: 4px; }
+.sky-line {
+  margin: 18px 0 0;
+  max-width: 34ch;
+  font-size: clamp(1rem, 0.5vw + 0.9rem, 1.25rem);
+  font-weight: 600;
+  line-height: 1.45;
+  color: rgba(255, 250, 240, 0.92);
+  text-shadow: 0 1px 14px rgba(30, 24, 45, 0.65);
+  animation: sky-rise 1.2s var(--ease-soft) 0.3s both;
+}
+.sky-cue {
+  position: absolute;
+  left: 50%;
+  bottom: calc(28px + env(safe-area-inset-bottom));
+  translate: -50% 0;
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  color: rgba(255, 250, 240, 0.8);
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  animation: sky-rise 1s ease 0.6s both;
+}
+.sky-cue:hover { color: #fff; }
+.sky-cue svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: sky-bob 2.2s ease-in-out 1.6s infinite;
+}
 @media (max-width: 520px) {
-  .sky-intro {
-    position: relative;
-    display: grid;
-    align-content: center;
-    justify-items: center;
-    height: 100vh;
-    height: 100svh;
-    margin-inline: -20px;
-    padding-bottom: 6vh;
-    text-align: center;
-    color: #fffaf0;
-    will-change: opacity, transform;
-  }
-  .sky-name {
-    margin: 0;
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(2.6rem, 12vw, 3.3rem);
-    line-height: 1.02;
-    letter-spacing: -0.015em;
-    text-shadow: 0 2px 24px rgba(30, 24, 45, 0.55), 0 0 2px rgba(30, 24, 45, 0.3);
-    animation: sky-rise 1.2s var(--ease-soft) both;
-  }
-  .sky-tag {
-    margin: 12px 0 0;
-    font-size: 0.82rem;
-    font-weight: 800;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(255, 250, 240, 0.86);
-    text-shadow: 0 1px 12px rgba(30, 24, 45, 0.6);
-    animation: sky-rise 1.2s var(--ease-soft) 0.15s both;
-  }
-  .sky-tag i { font-style: normal; color: var(--gold-soft); margin-inline: 4px; }
-  .sky-cue {
-    position: absolute;
-    left: 50%;
-    bottom: calc(28px + env(safe-area-inset-bottom));
-    translate: -50% 0;
-    display: grid;
-    justify-items: center;
-    gap: 2px;
-    color: rgba(255, 250, 240, 0.8);
-    text-decoration: none;
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    animation: sky-rise 1s ease 0.6s both;
-  }
-  .sky-cue svg {
-    width: 22px;
-    height: 22px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    animation: sky-bob 2.2s ease-in-out 1.6s infinite;
-  }
+  .sky-intro { margin-inline: -20px; }
 }
 
 @keyframes sky-rise {
