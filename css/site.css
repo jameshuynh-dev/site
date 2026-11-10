@@ -179,42 +179,6 @@
   max-width: 760px;
 }
 
-.status-tag {
-  display: inline-flex;
-  align-items: stretch;
-  margin-top: 22px;
-  border-radius: 10px;
-  overflow: hidden;
-  font-size: 0.95rem;
-  font-weight: 800;
-  line-height: 1;
-  box-shadow: 0 0 0 1.5px var(--navy), 0 6px 14px -8px rgba(30, 24, 45, 0.6);
-}
-.tag-label {
-  padding: 8px 12px;
-  background: var(--gold-soft);
-  color: var(--navy);
-}
-.tag-value {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  background: var(--ivory);
-  color: var(--gold-deep);
-}
-.blink {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #8fbf8a;
-  box-shadow: 0 0 0 3px rgba(143, 191, 138, 0.3);
-  animation: blink 2.4s ease-in-out infinite;
-}
-@keyframes blink {
-  50% { box-shadow: 0 0 0 7px rgba(143, 191, 138, 0); }
-}
-
 .cta {
   display: flex;
   flex-wrap: wrap;
@@ -934,7 +898,7 @@
 .resume-actions .btn::after { border-radius: 12px !important; }
 
 /* circles stay circles */
-.avatar img, .blink, .kicker .dot, .steps li::before, .lightbox-close { border-radius: 50% !important; }
+.avatar img, .kicker .dot, .steps li::before, .lightbox-close { border-radius: 50% !important; }
 
 @media (max-width: 520px) {
   .pill, .pill-bead { border-radius: 18px !important; }
